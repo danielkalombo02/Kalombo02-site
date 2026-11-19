@@ -1,0 +1,102 @@
+{
+  "ouvrages": [
+    {
+      "type": "collectif",
+      "titre": "Écarté et autres nouvelles",
+      "complement": "",
+      "auteur": "",
+      "detail": "Feuilles folles, 2023. Nouvelle « Bella »"
+    },
+    {
+      "type": "collectif",
+      "titre": "Le Foulard de Naomie",
+      "complement": "",
+      "auteur": "",
+      "detail": "Heptade, 2023. Poème « Douce mort »"
+    },
+    {
+      "type": "collectif",
+      "titre": "Et puis un jour",
+      "complement": "",
+      "auteur": "",
+      "detail": "Feuilles folles, 2024. Nouvelle « Il ne restera de toi qu’une mémoire »"
+    },
+    {
+      "type": "collectif",
+      "titre": "Amorces de récits ; en soutien à Boualem Sansal",
+      "complement": "",
+      "auteur": "",
+      "detail": "Pen Belgique, 2025. Texte « Sansal n’est pas un saint sale »"
+    },
+    {
+      "type": "collectif",
+      "titre": "Afurakano",
+      "complement": "",
+      "auteur": "",
+      "detail": "Maison TV5 Monde Kampala, 2025. Poème « Detta »"
+    },
+    {
+      "type": "collectif",
+      "titre": "L’hymne à la grâce",
+      "complement": "",
+      "auteur": "",
+      "detail": "Sous la direction de Blaise Ndala. Éditions Mlimani, Continents et Nzoi, 2026"
+    },
+    {
+      "type": "collectif",
+      "titre": "Ekosimba",
+      "complement": ", anthologie congolaise de poésie contemporaine",
+      "auteur": "",
+      "detail": "Éditions Mlimani, 2026"
+    },
+    {
+      "type": "preface",
+      "titre": "L’Herbe blanche",
+      "complement": "",
+      "auteur": "Georges Lwembe M.",
+      "detail": "Calures éditions, 2022"
+    },
+    {
+      "type": "preface",
+      "titre": "Melankwolia",
+      "complement": "",
+      "auteur": "Saphnath-Panéa Muka",
+      "detail": "Calures éditions, 2024"
+    },
+    {
+      "type": "preface",
+      "titre": "Goma. Du sang sur l’or",
+      "complement": "",
+      "auteur": "Saphnath-Panéa Muka et Paul Mwadi",
+      "detail": "Calures éditions, 2024"
+    },
+    {
+      "type": "preface",
+      "titre": "Sorcellerie ou mythologie africaine",
+      "complement": "",
+      "auteur": "François-Lambert Kiyonge",
+      "detail": "Calures éditions, 2024"
+    },
+    {
+      "type": "preface",
+      "titre": "Les Délires d’une croc-niqueuse",
+      "complement": "",
+      "auteur": "Kakera Lmg",
+      "detail": "Calures éditions, 2025"
+    },
+    {
+      "type": "preface",
+      "titre": "L’Abîme étoilé",
+      "complement": "",
+      "auteur": "Sir Hakim",
+      "detail": "Bookin Editions, 2026"
+    },
+    {
+      "type": "preface",
+      "titre": "Les Continents de mon âme",
+      "complement": "",
+      "auteur": "Sophie Muret",
+      "detail": "Bookin Editions, 2026"
+    }
+  ]
+}

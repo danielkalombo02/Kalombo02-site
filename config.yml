@@ -1,0 +1,107 @@
+# Configuration de l'administration (compatible Decap CMS et Sveltia CMS)
+
+backend:
+  name: github
+  repo: danielkalombo02/Kalombo02-site
+  branch: main
+
+locale: fr
+site_url: https://kalombo-02-blog.onrender.com
+media_folder: images
+public_folder: /images
+
+slug:
+  encoding: ascii
+  clean_accents: true
+
+collections:
+  - name: textes
+    label: Textes du Carnet
+    label_singular: Texte
+    folder: content/textes
+    create: true
+    extension: json
+    format: json
+    slug: "{{slug}}"
+    summary: "{{titre}}"
+    fields:
+      - { label: Titre, name: titre, widget: string }
+      - { label: Date de publication, name: date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD", required: false }
+      - label: Catégorie
+        name: categorie
+        widget: select
+        options: [Poésie, Nouvelles, Réflexions, Chroniques, Extraits]
+      - { label: Texte, name: texte, widget: text, hint: "Une ligne vide sépare deux paragraphes. Les retours à la ligne sont conservés (utile pour les poèmes)." }
+
+  - name: donnees
+    label: Livres, œuvres, citations, galerie
+    files:
+      - label: Livres
+        name: livres
+        file: content/livres.json
+        fields:
+          - label: Livres
+            name: livres
+            widget: list
+            summary: "{{fields.titre}}"
+            fields:
+              - { label: Titre, name: titre, widget: string }
+              - { label: Genre, name: genre, widget: string }
+              - { label: Éditeur, name: editeur, widget: string }
+              - { label: Année, name: annee, widget: number, value_type: int }
+              - { label: Préface (facultatif), name: preface, widget: string, required: false }
+              - { label: ISBN, name: isbn, widget: string }
+              - { label: Couverture, name: couverture, widget: image }
+              - label: Liens
+                name: liens
+                widget: list
+                fields:
+                  - { label: Libellé, name: libelle, widget: string }
+                  - { label: Adresse (https://…), name: url, widget: string }
+              - { label: Citation de quatrième de couverture (facultatif), name: citation, widget: text, required: false }
+
+      - label: Ouvrages collectifs et préfaces
+        name: ouvrages
+        file: content/ouvrages.json
+        fields:
+          - label: Ouvrages
+            name: ouvrages
+            widget: list
+            summary: "{{fields.titre}}"
+            fields:
+              - label: Type
+                name: type
+                widget: select
+                options:
+                  - { label: Ouvrage collectif, value: collectif }
+                  - { label: Préface, value: preface }
+              - { label: Titre du livre, name: titre, widget: string }
+              - { label: Complément après le titre (facultatif), name: complement, widget: string, required: false }
+              - { label: Auteur du livre préfacé (pour une préface), name: auteur, widget: string, required: false }
+              - { label: Détail (éditeur, année, texte publié…), name: detail, widget: string }
+
+      - label: Citations du jour
+        name: citations
+        file: content/citations.json
+        fields:
+          - label: Citations
+            name: citations
+            widget: list
+            summary: "{{fields.auteur}}"
+            fields:
+              - { label: Citation, name: texte, widget: text }
+              - { label: Auteur, name: auteur, widget: string }
+
+      - label: Galerie photo
+        name: galerie
+        file: content/galerie.json
+        fields:
+          - label: Photos
+            name: photos
+            widget: list
+            summary: "{{fields.legende}}"
+            fields:
+              - { label: Photo, name: image, widget: image }
+              - { label: Légende, name: legende, widget: string }
+              - { label: Crédit photo, name: credit, widget: string, required: false }
+              - { label: Description pour l'accessibilité, name: alt, widget: string, required: false }
