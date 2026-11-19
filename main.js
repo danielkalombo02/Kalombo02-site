@@ -6,7 +6,7 @@ function x(s){var d=document.createElement('div');d.textContent=s;return d.inner
 function fd(s){if(!s)return '[date à renseigner]';var p=s.split('-');return +p[2]+' '+M[+p[1]-1]+' '+p[0]}
 
 function card(b,full){var l=b.l.map(function(k){return '<a href="'+k[1]+'" target="_blank" rel="noopener">'+k[0]+'</a>'}).join('');
-return '<article class="bk"><img src="images/couverture-'+b.i+'.jpg" width="360" height="520" loading="lazy" alt="Couverture de '+b.t+'"><p class="bt"><i>'+b.t+'</i></p><p class="n" style="margin:0">'+b.g+', '+b.e+', '+b.y+(b.p?'. '+b.p:'')+'</p><p class="n" style="margin:4px 0">ISBN '+b.n+'</p><p class="n" style="margin:0">'+l+'</p>'+(full&&b.q?'<p class="bq">'+b.q+'</p>':'')+'</article>'}
+return '<article class="bk"><img src="couverture-'+b.i+'.jpg" width="360" height="520" loading="lazy" alt="Couverture de '+b.t+'"><p class="bt"><i>'+b.t+'</i></p><p class="n" style="margin:0">'+b.g+', '+b.e+', '+b.y+(b.p?'. '+b.p:'')+'</p><p class="n" style="margin:4px 0">ISBN '+b.n+'</p><p class="n" style="margin:0">'+l+'</p>'+(full&&b.q?'<p class="bq">'+b.q+'</p>':'')+'</article>'}
 document.getElementById('bk-home').innerHTML=LIVRES.map(function(b){return card(b,false)}).join('');
 document.getElementById('bk-full').innerHTML=LIVRES.map(function(b){return card(b,true)}).join('');
 document.getElementById('htx').innerHTML='<ul class="l">'+D.map(function(a){return '<li><a href="#a-'+a.id+'">'+x(a.titre)+'</a><span class="r">'+x(a.cat)+'</span></li>'}).join('')+'</ul>';
