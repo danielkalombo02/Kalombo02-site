@@ -1,6 +1,6 @@
 {
   "bandeau_actif": true,
-  "bandeau_texte": "Version de travail : contenus à valider. Les crochets [ ] signalent une information à renseigner ou à vérifier.",
+  "bandeau_texte": "Bienvenue sur le site officiel de Kalombo II",
   "titre": "Écrivain, chroniqueur, passeur de livres",
   "soustitre": "Littérature, chronique, action culturelle et économie de la culture.",
   "bouton1_texte": "Lire les textes",
@@ -8,8 +8,8 @@
   "bouton2_texte": "Voir les livres",
   "bouton2_lien": "#oeuvres",
   "portrait": "/images/portrait.jpg",
-  "portrait_alt": "Portrait de Kalombo II, coiffé d’un béret noir, assis dehors près d’un livre",
-  "portrait_credit": "Photographie : Nathan Bushiri, 2025",
+  "portrait_alt": "Portrait de Kalombo II posant pour Kiosque Littéraire, Centre d'art Waza",
+  "portrait_credit": "Photographie : Nathan Bushiru, 2025",
   "apropos_court": "Kalombo II est écrivain, chroniqueur, opérateur culturel et enseignant. Il est l’auteur de *Divine poésie*, de *La Danse de Ndombolo* et du *Fleuve est pareil à ma peine*, et a contribué à plusieurs ouvrages collectifs.",
   "contact_titre": "Une question, une proposition ?",
   "contact_texte": "Pour échanger sur un texte, une recherche ou un projet. Réponse sous une semaine.",
