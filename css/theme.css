@@ -1,0 +1,6 @@
+/* FICHIER GÉNÉRÉ AUTOMATIQUEMENT par build.js à partir de content/site/apparence.json. Ne le modifiez pas à la main. */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+:root{--bg:#F7F3EA;--ink:#1A1A1A;--mu:#6B665E;--ac:#6B1F2A;--ru:#D9D2C3;--on:#F7F3EA;--f-titre:'EB Garamond',Georgia,serif;--f-texte:'Newsreader',Georgia,serif;--taille:18px;--pied-fond:#1A1A1A;--pied-texte:#EDE7DA}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#16140F;--ink:#EDE7DA;--mu:#A39D90;--ac:#C9777F;--ru:#3A362D;--on:#16140F;color-scheme:dark}}
+:root[data-theme=dark]{--bg:#16140F;--ink:#EDE7DA;--mu:#A39D90;--ac:#C9777F;--ru:#3A362D;--on:#16140F;color-scheme:dark}

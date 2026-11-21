@@ -1,0 +1,62 @@
+{
+  "menu": {
+    "nom": "Kalombo II",
+    "titre_onglet": "Kalombo II — écrivain, chroniqueur, passeur de livres",
+    "nav_oeuvres": "Œuvres",
+    "nav_recherche": "Recherche",
+    "nav_carnet": "Carnet",
+    "nav_projets": "Projets",
+    "nav_galerie": "Galerie",
+    "nav_apropos": "À propos",
+    "nav_contact": "Contact",
+    "pied_contact": "Contact et mentions légales"
+  },
+  "accueil": {
+    "h_citation": "Citation du jour",
+    "h_apropos": "À propos",
+    "lire_suite": "Lire la suite",
+    "h_livres": "Livres",
+    "toutes_oeuvres": "Toutes les œuvres",
+    "h_carnet_accueil": "Dans le Carnet",
+    "tous_textes": "Tous les textes"
+  },
+  "oeuvres": {
+    "h_collectifs": "Ouvrages collectifs et préfaces",
+    "f_tout": "Tout",
+    "f_collectifs": "Ouvrages collectifs",
+    "f_prefaces": "Préfaces",
+    "f_placeholder": "Rechercher un titre, un éditeur, une année",
+    "f_aucun": "Aucune œuvre ne correspond à cette recherche.",
+    "isbn": "ISBN",
+    "couverture_de": "Couverture de",
+    "h_prix": "Prix et sélections",
+    "h_prix_sous": "Prix",
+    "h_selections": "Sélections (finaliste)"
+  },
+  "pages": {
+    "memoire": "Mémoire :",
+    "carnet_intro": "Poèmes, nouvelles, réflexions, chroniques et extraits.",
+    "h_ailleurs": "Ailleurs",
+    "retour_carnet": "Retour au carnet",
+    "cat_vide": "Aucun texte dans cette catégorie pour l’instant.",
+    "date_inconnue": "[date à renseigner]",
+    "h_projets": "Projets et activités",
+    "renvoi_projets": "Ses rôles et activités sont détaillés dans la rubrique",
+    "galerie_note": "Photographies : [légendes et crédits à renseigner pour chaque nouvelle image].",
+    "fermer": "Fermer",
+    "photo_credit": "photographie",
+    "h_mentions": "Mentions légales",
+    "whatsapp_prefixe": "WhatsApp :",
+    "mode_sombre": "Mode sombre",
+    "mode_clair": "Mode clair",
+    "c_titre": "Commentaires",
+    "c_nom": "Votre nom",
+    "c_message": "Votre commentaire",
+    "c_envoyer": "Envoyer",
+    "c_merci": "Merci. Votre commentaire sera publié après relecture.",
+    "c_erreur": "L’envoi a échoué. Réessayez plus tard.",
+    "c_erreur_champs": "Merci de remplir votre nom et votre commentaire.",
+    "c_aucun": "Aucun commentaire publié pour l’instant.",
+    "c_avertissement": "Les commentaires sont relus avant d’être publiés."
+  }
+}

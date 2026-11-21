@@ -25,13 +25,256 @@ collections:
     slug: "{{slug}}"
     summary: "{{titre}}"
     fields:
-      - { label: Titre, name: titre, widget: string }
-      - { label: Date de publication, name: date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD", required: false }
+      - { label: "Titre", name: titre, widget: string }
+      - { label: "Date de publication", name: date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD", required: false }
       - label: Catégorie
         name: categorie
         widget: select
         options: [Poésie, Nouvelles, Réflexions, Chroniques, Extraits]
-      - { label: Texte, name: texte, widget: text, hint: "Une ligne vide sépare deux paragraphes. Les retours à la ligne sont conservés (utile pour les poèmes)." }
+      - { label: "Texte", name: texte, widget: text, hint: "Une ligne vide sépare deux paragraphes. Les retours à la ligne sont conservés (utile pour les poèmes)." }
+
+  - name: pages
+    label: Pages et textes du site
+    files:
+      - label: Accueil, bandeau et bouton de contact
+        name: accueil
+        file: content/site/accueil.json
+        fields:
+          - { label: "Afficher le bandeau « Version de travail »", name: bandeau_actif, widget: boolean, default: true }
+          - { label: "Texte du bandeau", name: bandeau_texte, widget: string, required: false }
+          - { label: "Titre principal", name: titre, widget: string }
+          - { label: "Sous-titre", name: soustitre, widget: string }
+          - { label: "Premier bouton (texte)", name: bouton1_texte, widget: string }
+          - { label: "Premier bouton (lien : #carnet, #oeuvres, #recherche, #projets, #galerie, #apropos, #contact ou https://…)", name: bouton1_lien, widget: string }
+          - { label: "Second bouton (texte)", name: bouton2_texte, widget: string }
+          - { label: "Second bouton (lien)", name: bouton2_lien, widget: string }
+          - { label: "Portrait", name: portrait, widget: image }
+          - { label: "Description du portrait (accessibilité)", name: portrait_alt, widget: string }
+          - { label: "Crédit photo du portrait", name: portrait_credit, widget: string }
+          - { label: "Texte « À propos » de l'accueil (entourez un titre de *étoiles* pour l'italique)", name: apropos_court, widget: text }
+          - { label: "Titre de la section contact de l'accueil", name: contact_titre, widget: string }
+          - { label: "Texte de la section contact de l'accueil", name: contact_texte, widget: text }
+          - { label: "Bouton de la section contact", name: contact_bouton, widget: string }
+
+      - label: Page « À propos »
+        name: apropos
+        file: content/site/apropos.json
+        fields:
+          - { label: "Biographie (une ligne vide sépare deux paragraphes ; *étoiles* pour l'italique)", name: texte, widget: text }
+          - { label: "Note sous la biographie (facultatif)", name: note, widget: string, required: false }
+
+      - label: Page « Recherche »
+        name: recherche
+        file: content/site/recherche.json
+        fields:
+          - { label: "Texte principal", name: texte, widget: text }
+          - { label: "Titre du mémoire", name: memoire_titre, widget: string, required: false }
+          - { label: "Lien du mémoire", name: memoire_lien, widget: string, required: false }
+          - { label: "Texte après le mémoire", name: texte2, widget: text, required: false }
+          - { label: "Note (facultatif)", name: note, widget: text, required: false }
+
+      - label: Page « Contact » et pied de page
+        name: contact
+        file: content/site/contact.json
+        fields:
+          - { label: "Texte d'introduction", name: intro, widget: text }
+          - { label: "Adresse e-mail", name: email, widget: string }
+          - { label: "Numéro WhatsApp pour le lien (chiffres seulement, avec l'indicatif, ex. 243846080341)", name: whatsapp, widget: string }
+          - { label: "Numéro WhatsApp tel qu'il s'affiche", name: whatsapp_affiche, widget: string }
+          - { label: "Ville et pays", name: lieu, widget: string, required: false }
+          - { label: "Lien Instagram", name: instagram, widget: string, required: false }
+          - { label: "Lien Facebook", name: facebook, widget: string, required: false }
+          - { label: "Lien Kiosque Littéraire", name: kiosque, widget: string, required: false }
+          - { label: "Note sous les contacts", name: note, widget: text, required: false }
+          - { label: "Mentions légales", name: mentions, widget: text }
+          - { label: "Texte du pied de page", name: pied, widget: string }
+
+      - label: Projets et activités
+        name: projets
+        file: content/projets.json
+        fields:
+          - label: Projets
+            name: projets
+            widget: list
+            summary: "{{fields.organisation}}"
+            fields:
+              - { label: "Organisation ou activité", name: organisation, widget: string }
+              - { label: "Rôle (entourez de *étoiles* pour l'italique)", name: role, widget: string }
+
+      - label: Prix et sélections
+        name: prix
+        file: content/prix.json
+        fields:
+          - label: Prix et sélections
+            name: prix
+            widget: list
+            summary: "{{fields.intitule}}"
+            fields:
+              - label: Catégorie
+                name: categorie
+                widget: select
+                options:
+                  - { label: Prix, value: prix }
+                  - { label: Sélection (finaliste), value: selection }
+              - { label: "Intitulé", name: intitule, widget: string }
+              - { label: "Détail (*étoiles* pour l'italique)", name: detail, widget: text }
+              - { label: "Libellé du lien (facultatif)", name: lien_libelle, widget: string, required: false }
+              - { label: "Adresse du lien (https://…)", name: lien_url, widget: string, required: false }
+
+      - label: Carnet, section « Ailleurs »
+        name: ailleurs
+        file: content/ailleurs.json
+        fields:
+          - label: Liens
+            name: liens
+            widget: list
+            summary: "{{fields.titre}}"
+            fields:
+              - { label: "Titre", name: titre, widget: string }
+              - { label: "Adresse (https://…)", name: url, widget: string }
+              - { label: "Détail (facultatif)", name: detail, widget: text, required: false }
+
+      - label: "Textes du site : menus, titres, boutons"
+        name: libelles
+        file: content/site/libelles.json
+        fields:
+          - label: "Nom du site, menu et pied de page"
+            name: menu
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Nom du site (en-tête)", name: nom, widget: string }
+              - { label: "Titre dans l'onglet du navigateur", name: titre_onglet, widget: string }
+              - { label: "Menu : Œuvres", name: nav_oeuvres, widget: string }
+              - { label: "Menu : Recherche", name: nav_recherche, widget: string }
+              - { label: "Menu : Carnet", name: nav_carnet, widget: string }
+              - { label: "Menu : Projets", name: nav_projets, widget: string }
+              - { label: "Menu : Galerie", name: nav_galerie, widget: string }
+              - { label: "Menu : À propos", name: nav_apropos, widget: string }
+              - { label: "Menu : Contact", name: nav_contact, widget: string }
+              - { label: "Pied de page : lien vers Contact et mentions légales", name: pied_contact, widget: string }
+          - label: "Titres de l'accueil"
+            name: accueil
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Accueil : titre de la citation du jour", name: h_citation, widget: string }
+              - { label: "Accueil : titre « À propos »", name: h_apropos, widget: string }
+              - { label: "Accueil : lien vers la biographie", name: lire_suite, widget: string }
+              - { label: "Accueil : titre « Livres »", name: h_livres, widget: string }
+              - { label: "Accueil : lien vers toutes les œuvres", name: toutes_oeuvres, widget: string }
+              - { label: "Accueil : titre du Carnet", name: h_carnet_accueil, widget: string }
+              - { label: "Accueil : lien vers tous les textes", name: tous_textes, widget: string }
+          - label: "Œuvres, filtres, prix"
+            name: oeuvres
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Œuvres : titre des ouvrages collectifs et préfaces", name: h_collectifs, widget: string }
+              - { label: "Filtre : Tout", name: f_tout, widget: string }
+              - { label: "Filtre : Ouvrages collectifs", name: f_collectifs, widget: string }
+              - { label: "Filtre : Préfaces", name: f_prefaces, widget: string }
+              - { label: "Champ de recherche : texte indicatif", name: f_placeholder, widget: string }
+              - { label: "Message : aucune œuvre trouvée", name: f_aucun, widget: string }
+              - { label: "Mot « ISBN »", name: isbn, widget: string }
+              - { label: "Début de la description des couvertures (accessibilité)", name: couverture_de, widget: string }
+              - { label: "Titre « Prix et sélections »", name: h_prix, widget: string }
+              - { label: "Sous-titre « Prix »", name: h_prix_sous, widget: string }
+              - { label: "Sous-titre « Sélections »", name: h_selections, widget: string }
+          - label: "Autres pages, boutons et messages"
+            name: pages
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Recherche : mot « Mémoire : »", name: memoire, widget: string }
+              - { label: "Carnet : phrase d’introduction", name: carnet_intro, widget: string }
+              - { label: "Carnet : titre « Ailleurs »", name: h_ailleurs, widget: string }
+              - { label: "Lien « Retour au carnet »", name: retour_carnet, widget: string }
+              - { label: "Message : catégorie vide", name: cat_vide, widget: string }
+              - { label: "Texte affiché quand un texte n’a pas de date", name: date_inconnue, widget: string }
+              - { label: "Titre de la page Projets", name: h_projets, widget: string }
+              - { label: "À propos : phrase qui renvoie vers Projets", name: renvoi_projets, widget: string }
+              - { label: "Galerie : note sous les photos", name: galerie_note, widget: string }
+              - { label: "Bouton « Fermer » des photos", name: fermer, widget: string }
+              - { label: "Mot « photographie » dans les légendes", name: photo_credit, widget: string }
+              - { label: "Titre « Mentions légales »", name: h_mentions, widget: string }
+              - { label: "Préfixe devant le numéro WhatsApp", name: whatsapp_prefixe, widget: string }
+              - { label: "Bouton : passer au mode sombre", name: mode_sombre, widget: string }
+              - { label: "Bouton : passer au mode clair", name: mode_clair, widget: string }
+              - { label: "Commentaires : titre", name: c_titre, widget: string }
+              - { label: "Commentaires : champ nom", name: c_nom, widget: string }
+              - { label: "Commentaires : champ message", name: c_message, widget: string }
+              - { label: "Commentaires : bouton envoyer", name: c_envoyer, widget: string }
+              - { label: "Commentaires : message de remerciement", name: c_merci, widget: string }
+              - { label: "Commentaires : message d'erreur d'envoi", name: c_erreur, widget: string }
+              - { label: "Commentaires : message de champs vides", name: c_erreur_champs, widget: string }
+              - { label: "Commentaires : aucun commentaire", name: c_aucun, widget: string }
+              - { label: "Commentaires : note sur la relecture", name: c_avertissement, widget: string }
+
+      - label: "Apparence : couleurs, polices, mode clair et sombre"
+        name: apparence
+        file: content/site/apparence.json
+        fields:
+          - label: "Couleurs du mode clair"
+            name: couleurs_claires
+            widget: object
+            fields:
+              - { label: "Fond de la page", name: fond, widget: color, allowInput: true }
+              - { label: "Texte principal", name: texte, widget: color, allowInput: true }
+              - { label: "Texte secondaire (gris)", name: secondaire, widget: color, allowInput: true }
+              - { label: "Couleur d’accent (boutons, titres de listes)", name: accent, widget: color, allowInput: true }
+              - { label: "Filets et bordures", name: filets, widget: color, allowInput: true }
+              - { label: "Texte des boutons", name: texte_bouton, widget: color, allowInput: true }
+          - label: "Couleurs du mode sombre"
+            name: couleurs_sombres
+            widget: object
+            fields:
+              - { label: "Fond de la page", name: fond, widget: color, allowInput: true }
+              - { label: "Texte principal", name: texte, widget: color, allowInput: true }
+              - { label: "Texte secondaire", name: secondaire, widget: color, allowInput: true }
+              - { label: "Couleur d’accent", name: accent, widget: color, allowInput: true }
+              - { label: "Filets et bordures", name: filets, widget: color, allowInput: true }
+              - { label: "Texte des boutons", name: texte_bouton, widget: color, allowInput: true }
+          - label: "Pied de page"
+            name: pied
+            widget: object
+            fields:
+              - { label: "Fond du pied de page", name: fond, widget: color, allowInput: true }
+              - { label: "Texte du pied de page", name: texte, widget: color, allowInput: true }
+          - label: "Polices et taille du texte"
+            name: polices
+            widget: object
+            fields:
+              - { label: "Police des titres", name: titres, widget: select, options: ["EB Garamond", "Cormorant Garamond", "Playfair Display", "Lora", "Crimson Pro", "Libre Baskerville", "Spectral", "Fraunces", "DM Serif Display", "Georgia (police du système)"] }
+              - { label: "Police des titres : autre police Google (facultatif, nom exact sur fonts.google.com, remplace le choix ci-dessus)", name: titres_perso, widget: string, required: false }
+              - { label: "Police du texte", name: texte, widget: select, options: ["Newsreader", "Lora", "Source Serif 4", "Crimson Pro", "Merriweather", "Libre Baskerville", "Spectral", "Work Sans", "Inter", "Georgia (police du système)"] }
+              - { label: "Police du texte : autre police Google (facultatif)", name: texte_perso, widget: string, required: false }
+              - { label: "Taille du texte (en pixels)", name: taille, widget: select, options: ["16", "17", "18", "19", "20"] }
+          - label: "Mode clair et mode sombre"
+            name: mode
+            widget: object
+            fields:
+              - label: "Mode par défaut"
+                name: defaut
+                widget: select
+                options:
+                  - { label: "Selon l'appareil du visiteur", value: auto }
+                  - { label: "Toujours clair", value: clair }
+                  - { label: "Toujours sombre", value: sombre }
+              - { label: "Afficher le bouton qui permet au visiteur de changer de mode", name: bouton, widget: boolean, default: true }
+
+      - label: "Commentaires : réglages"
+        name: commentaires_reglages
+        file: content/site/commentaires.json
+        fields:
+          - label: "Mode des commentaires"
+            name: mode
+            widget: select
+            options:
+              - { label: "Désactivés", value: desactive }
+              - { label: "Formulaire sous chaque texte, avec relecture avant publication", value: formulaire }
+          - { label: "Adresse du service qui reçoit les commentaires (https://formspree.io/f/… ou https://api.web3forms.com/submit)", name: formulaire_url, widget: string, required: false }
+          - { label: "Clé d'accès (seulement pour Web3Forms)", name: cle_acces, widget: string, required: false }
 
   - name: donnees
     label: Livres, œuvres, citations, galerie
@@ -45,20 +288,20 @@ collections:
             widget: list
             summary: "{{fields.titre}}"
             fields:
-              - { label: Titre, name: titre, widget: string }
-              - { label: Genre, name: genre, widget: string }
-              - { label: Éditeur, name: editeur, widget: string }
-              - { label: Année, name: annee, widget: number, value_type: int }
-              - { label: Préface (facultatif), name: preface, widget: string, required: false }
-              - { label: ISBN, name: isbn, widget: string }
-              - { label: Couverture, name: couverture, widget: image }
+              - { label: "Titre", name: titre, widget: string }
+              - { label: "Genre", name: genre, widget: string }
+              - { label: "Éditeur", name: editeur, widget: string }
+              - { label: "Année", name: annee, widget: number, value_type: int }
+              - { label: "Préface (facultatif)", name: preface, widget: string, required: false }
+              - { label: "ISBN", name: isbn, widget: string }
+              - { label: "Couverture", name: couverture, widget: image }
               - label: Liens
                 name: liens
                 widget: list
                 fields:
-                  - { label: Libellé, name: libelle, widget: string }
-                  - { label: Adresse (https://…), name: url, widget: string }
-              - { label: Citation de quatrième de couverture (facultatif), name: citation, widget: text, required: false }
+                  - { label: "Libellé", name: libelle, widget: string }
+                  - { label: "Adresse (https://…)", name: url, widget: string }
+              - { label: "Citation de quatrième de couverture (facultatif)", name: citation, widget: text, required: false }
 
       - label: Ouvrages collectifs et préfaces
         name: ouvrages
@@ -75,10 +318,10 @@ collections:
                 options:
                   - { label: Ouvrage collectif, value: collectif }
                   - { label: Préface, value: preface }
-              - { label: Titre du livre, name: titre, widget: string }
-              - { label: Complément après le titre (facultatif), name: complement, widget: string, required: false }
-              - { label: Auteur du livre préfacé (pour une préface), name: auteur, widget: string, required: false }
-              - { label: Détail (éditeur, année, texte publié…), name: detail, widget: string }
+              - { label: "Titre du livre", name: titre, widget: string }
+              - { label: "Complément après le titre (facultatif)", name: complement, widget: string, required: false }
+              - { label: "Auteur du livre préfacé (pour une préface)", name: auteur, widget: string, required: false }
+              - { label: "Détail (éditeur, année, texte publié…)", name: detail, widget: string }
 
       - label: Citations du jour
         name: citations
@@ -89,8 +332,8 @@ collections:
             widget: list
             summary: "{{fields.auteur}}"
             fields:
-              - { label: Citation, name: texte, widget: text }
-              - { label: Auteur, name: auteur, widget: string }
+              - { label: "Citation", name: texte, widget: text }
+              - { label: "Auteur", name: auteur, widget: string }
 
       - label: Galerie photo
         name: galerie
@@ -101,7 +344,22 @@ collections:
             widget: list
             summary: "{{fields.legende}}"
             fields:
-              - { label: Photo, name: image, widget: image }
-              - { label: Légende, name: legende, widget: string }
-              - { label: Crédit photo, name: credit, widget: string, required: false }
-              - { label: Description pour l'accessibilité, name: alt, widget: string, required: false }
+              - { label: "Photo", name: image, widget: image }
+              - { label: "Légende", name: legende, widget: string }
+              - { label: "Crédit photo", name: credit, widget: string, required: false }
+              - { label: "Description pour l'accessibilité", name: alt, widget: string, required: false }
+
+  - name: commentaires
+    label: Commentaires approuvés
+    label_singular: Commentaire
+    folder: content/commentaires
+    create: true
+    extension: json
+    format: json
+    slug: "{{year}}-{{month}}-{{day}}-{{hour}}{{minute}}{{second}}"
+    summary: "{{auteur}}"
+    fields:
+      - { label: "Texte concerné", name: article, widget: relation, collection: textes, search_fields: ["titre"], value_field: "{{slug}}", display_fields: ["titre"] }
+      - { label: "Auteur du commentaire", name: auteur, widget: string }
+      - { label: "Date", name: date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD", required: false }
+      - { label: "Commentaire (copié depuis l'e-mail reçu, après relecture)", name: texte, widget: text }

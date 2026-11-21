@@ -1,17 +1,18 @@
+:root{--f-titre:"EB Garamond",Georgia,serif;--f-texte:Newsreader,Georgia,serif;--taille:18px}
 :root{--bg:#F7F3EA;--ink:#1A1A1A;--mu:#6B665E;--ac:#6B1F2A;--ru:#D9D2C3;--on:#F7F3EA;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#16140F;--ink:#EDE7DA;--mu:#A39D90;--ac:#C9777F;--ru:#3A362D;--on:#16140F;color-scheme:dark}}
 :root[data-theme=dark]{--bg:#16140F;--ink:#EDE7DA;--mu:#A39D90;--ac:#C9777F;--ru:#3A362D;--on:#16140F;color-scheme:dark}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
-body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.65 Newsreader,Georgia,serif}
+body{margin:0;background:var(--bg);color:var(--ink);font:var(--taille,18px)/1.65 var(--f-texte)}
 [hidden]{display:none!important}
 a{color:inherit}
 a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
 .w{max-width:1040px;margin:0 auto;padding:0 20px}
-h1,h2{font-family:"EB Garamond",Georgia,serif;font-weight:500;line-height:1.12;margin:0}
+h1,h2{font-family:var(--f-titre);font-weight:500;line-height:1.12;margin:0}
 .sx{font:14px/1.5 system-ui,sans-serif}
 .wip{background:var(--ink);color:var(--bg);text-align:center;padding:6px 12px;font:13px system-ui,sans-serif}
 header .w{display:flex;flex-wrap:wrap;gap:6px 28px;justify-content:space-between;align-items:baseline;padding-top:18px;padding-bottom:14px;border-bottom:1px solid var(--ru)}
-.nm{font:500 1.5rem "EB Garamond",Georgia,serif;text-decoration:none}
+.nm{font:500 1.5rem var(--f-titre);text-decoration:none}
 nav a{margin-right:16px;text-decoration:none;font:14px system-ui,sans-serif;display:inline-block;padding:6px 0}
 .hero{display:grid;gap:36px;padding:56px 20px 68px}
 @media(min-width:800px){.hero{grid-template-columns:7fr 4fr;align-items:end}}
@@ -35,17 +36,17 @@ h3{font:600 .8rem system-ui,sans-serif;letter-spacing:.06em;margin:0 0 6px;color
 .f button,.f input{font:14px system-ui,sans-serif;min-height:44px;padding:8px 14px;border:1px solid var(--ru);background:none;color:var(--ink)}
 .f input{flex:1;min-width:170px}
 .f button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
-.at{font:500 2rem/1.15 "EB Garamond",Georgia,serif;letter-spacing:0;color:var(--ink);margin:0 0 6px}.ar p{max-width:38em;white-space:pre-line}.ar a{display:inline-block;padding:6px 0}.gal{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}.gal figure{margin:0}.gb{border:0;padding:0;background:none;display:block;width:100%;cursor:zoom-in}.gal img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover}.gal figcaption{font:13px/1.4 system-ui,sans-serif;color:var(--mu);margin-top:6px}dialog{max-width:min(92vw,720px);border:1px solid var(--ru);background:var(--bg);color:var(--ink);padding:16px}dialog img{display:block;width:100%;height:auto;max-height:70vh;object-fit:contain}dialog::backdrop{background:rgba(0,0,0,.6)}dialog button{margin-top:10px;min-height:44px;padding:8px 16px;border:1px solid var(--ru);background:none;color:var(--ink)}
-footer{background:#1A1A1A;color:#EDE7DA;padding:36px 0;font:14px/1.7 system-ui,sans-serif}
+.at{font:500 2rem/1.15 var(--f-titre);letter-spacing:0;color:var(--ink);margin:0 0 6px}.ar p{max-width:38em;white-space:pre-line}.ar a{display:inline-block;padding:6px 0}.gal{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}.gal figure{margin:0}.gb{border:0;padding:0;background:none;display:block;width:100%;cursor:zoom-in}.gal img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover}.gal figcaption{font:13px/1.4 system-ui,sans-serif;color:var(--mu);margin-top:6px}dialog{max-width:min(92vw,720px);border:1px solid var(--ru);background:var(--bg);color:var(--ink);padding:16px}dialog img{display:block;width:100%;height:auto;max-height:70vh;object-fit:contain}dialog::backdrop{background:rgba(0,0,0,.6)}dialog button{margin-top:10px;min-height:44px;padding:8px 16px;border:1px solid var(--ru);background:none;color:var(--ink)}
+footer{background:var(--pied-fond,#1A1A1A);color:var(--pied-texte,#EDE7DA);padding:36px 0;font:14px/1.7 system-ui,sans-serif}
 footer a{margin-right:16px}
 
 nav a[aria-current=page]{text-decoration:underline;text-underline-offset:6px}
 .bks{display:grid;gap:28px;grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
 .bk img{display:block;width:100%;height:auto;aspect-ratio:36/52;object-fit:cover;margin-bottom:10px}
-.bk .bt{font:500 1.25rem "EB Garamond",Georgia,serif;margin:0 0 4px}
+.bk .bt{font:500 1.25rem var(--f-titre);margin:0 0 4px}
 .bk a{font:14px system-ui,sans-serif;margin-right:12px}
 .bq{margin:10px 0 0;font-size:15px;line-height:1.5;color:var(--mu)}
-.at{font:500 2rem/1.15 "EB Garamond",Georgia,serif;letter-spacing:0;color:var(--ink);margin:0 0 6px}
+.at{font:500 2rem/1.15 var(--f-titre);letter-spacing:0;color:var(--ink);margin:0 0 6px}
 .ar p{max-width:38em;white-space:pre-line}.ar a{display:inline-block;padding:6px 0}
 .gal{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}.gal figure{margin:0}
 .gb{border:0;padding:0;background:none;display:block;width:100%;cursor:zoom-in}
@@ -55,5 +56,14 @@ dialog{max-width:min(92vw,720px);border:1px solid var(--ru);background:var(--bg)
 dialog img{display:block;width:100%;height:auto;max-height:70vh;object-fit:contain}
 dialog::backdrop{background:rgba(0,0,0,.6)}
 dialog button{margin-top:10px;min-height:44px;padding:8px 16px;border:1px solid var(--ru);background:none;color:var(--ink)}
-.ci{margin:0}.ci blockquote{margin:0;font:italic 500 1.6rem/1.4 "EB Garamond",Georgia,serif}
+.ci{margin:0}.ci blockquote{margin:0;font:italic 500 1.6rem/1.4 var(--f-titre)}
 footer a{display:inline-block;padding:4px 0}
+
+.md{font:13px system-ui,sans-serif;background:none;border:1px solid var(--ru);color:var(--ink);padding:6px 12px;min-height:36px;cursor:pointer}
+.cm{margin-top:40px;padding-top:24px;border-top:1px solid var(--ru)}
+.cmt{font:500 1.4rem var(--f-titre);letter-spacing:0;color:var(--ink);margin:0 0 12px}
+.cmi p{max-width:38em}
+.cmf{display:grid;gap:14px;max-width:38em;position:relative;margin-top:20px}
+.cmf label{display:grid;gap:6px;font:14px system-ui,sans-serif}
+.cmf input,.cmf textarea{font:16px var(--f-texte);padding:10px;border:1px solid var(--ru);background:transparent;color:var(--ink)}
+.cmf button{border:0;cursor:pointer;justify-self:start}

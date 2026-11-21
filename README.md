@@ -7,18 +7,20 @@ Site statique avec un espace d'administration (`/admin/`) pour ajouter textes, l
 ## Contenu du dossier
 
 - `index.html` : les pages du site
-- `css/style.css` : l'apparence
+- `css/style.css` : la structure de l'apparence ; `css/theme.css` : couleurs et polices, généré automatiquement
 - `js/main.js` : le fonctionnement du site (ne pas toucher)
 - `js/data.js` : fichier généré automatiquement (ne pas modifier à la main)
-- `content/` : vos contenus (textes, livres, ouvrages collectifs et préfaces, citations, galerie)
+- `content/` : tous vos contenus (textes, livres, citations, galerie, pages du site)
 - `admin/` : l'administration (`index.html` et `config.yml`, déjà réglé sur votre dépôt `danielkalombo02/Kalombo02-site`)
 - `build.js` : transforme `content/` en `js/data.js` à chaque publication
 - `images/` : portrait, couvertures, photos ajoutées
 - `404.html` : page d'erreur
 
-## Ce qui reste dans index.html
+## Ce que l'administration permet de modifier
 
-À modifier directement sur GitHub (crayon sur `index.html`) : la section Prix et sélections, les pages Projets et Recherche, le texte « À propos », les liens du Carnet (« Ailleurs »), la section Contact, le pied de page, les phrases entre crochets `[ ]`, et le bandeau « Version de travail » (supprimez la ligne `<div class="wip">…</div>`).
+Textes du Carnet, livres, ouvrages collectifs et préfaces, citations du jour, galerie, mais aussi le bandeau, le titre et les boutons de l'accueil, le portrait, la biographie, la page Recherche, le contact et le pied de page, les projets, les prix et les liens « Ailleurs ». Voir `GUIDE-ADMIN.md`, partie G.
+
+Les menus, titres, boutons, couleurs, polices, le mode clair/sombre et les commentaires se règlent aussi depuis l'administration (parties H et I du guide).
 
 ## Ce que le site ne fait pas encore
 

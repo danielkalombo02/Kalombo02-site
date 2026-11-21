@@ -1,0 +1,19 @@
+{
+  "liens": [
+    {
+      "titre": "Kiosque Littéraire",
+      "url": "https://www.kiosquelitteraire.org",
+      "detail": "Site de la plateforme, où paraissent *Les Lectures de Kalombo II* et *Je réfléchis à Haute-Voix* [liens directs vers chaque blog à confirmer]"
+    },
+    {
+      "titre": "La bande des journaleux",
+      "url": "https://www.kiosquelitteraire.org/posts/read-post/la-bande-des-journaleux/334/",
+      "detail": "Sur Kiosque Littéraire [nature de ce texte à préciser]"
+    },
+    {
+      "titre": "Chaîne WhatsApp",
+      "url": "https://whatsapp.com/channel/0029VaXYaoHJ3juzYYo4Mh2u",
+      "detail": "Pour *Écriture* et *Regard sur la littérature*"
+    }
+  ]
+}

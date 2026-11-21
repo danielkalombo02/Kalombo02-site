@@ -1,0 +1,33 @@
+{
+  "couleurs_claires": {
+    "fond": "#F7F3EA",
+    "texte": "#1A1A1A",
+    "secondaire": "#6B665E",
+    "accent": "#6B1F2A",
+    "filets": "#D9D2C3",
+    "texte_bouton": "#F7F3EA"
+  },
+  "couleurs_sombres": {
+    "fond": "#16140F",
+    "texte": "#EDE7DA",
+    "secondaire": "#A39D90",
+    "accent": "#C9777F",
+    "filets": "#3A362D",
+    "texte_bouton": "#16140F"
+  },
+  "pied": {
+    "fond": "#1A1A1A",
+    "texte": "#EDE7DA"
+  },
+  "polices": {
+    "titres": "EB Garamond",
+    "titres_perso": "",
+    "texte": "Newsreader",
+    "texte_perso": "",
+    "taille": "18"
+  },
+  "mode": {
+    "defaut": "auto",
+    "bouton": true
+  }
+}

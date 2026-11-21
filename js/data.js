@@ -222,3 +222,215 @@ var OUVRAGES = [
   "detail": "Bookin Editions, 2026"
  }
 ];
+var LIB = {
+ "nom": "Kalombo II",
+ "titre_onglet": "Kalombo II — écrivain, chroniqueur, passeur de livres",
+ "nav_oeuvres": "Œuvres",
+ "nav_recherche": "Recherche",
+ "nav_carnet": "Carnet",
+ "nav_projets": "Projets",
+ "nav_galerie": "Galerie",
+ "nav_apropos": "À propos",
+ "nav_contact": "Contact",
+ "pied_contact": "Contact et mentions légales",
+ "h_citation": "Citation du jour",
+ "h_apropos": "À propos",
+ "lire_suite": "Lire la suite",
+ "h_livres": "Livres",
+ "toutes_oeuvres": "Toutes les œuvres",
+ "h_carnet_accueil": "Dans le Carnet",
+ "tous_textes": "Tous les textes",
+ "h_collectifs": "Ouvrages collectifs et préfaces",
+ "f_tout": "Tout",
+ "f_collectifs": "Ouvrages collectifs",
+ "f_prefaces": "Préfaces",
+ "f_placeholder": "Rechercher un titre, un éditeur, une année",
+ "f_aucun": "Aucune œuvre ne correspond à cette recherche.",
+ "isbn": "ISBN",
+ "couverture_de": "Couverture de",
+ "h_prix": "Prix et sélections",
+ "h_prix_sous": "Prix",
+ "h_selections": "Sélections (finaliste)",
+ "memoire": "Mémoire :",
+ "carnet_intro": "Poèmes, nouvelles, réflexions, chroniques et extraits.",
+ "h_ailleurs": "Ailleurs",
+ "retour_carnet": "Retour au carnet",
+ "cat_vide": "Aucun texte dans cette catégorie pour l’instant.",
+ "date_inconnue": "[date à renseigner]",
+ "h_projets": "Projets et activités",
+ "renvoi_projets": "Ses rôles et activités sont détaillés dans la rubrique",
+ "galerie_note": "Photographies : [légendes et crédits à renseigner pour chaque nouvelle image].",
+ "fermer": "Fermer",
+ "photo_credit": "photographie",
+ "h_mentions": "Mentions légales",
+ "whatsapp_prefixe": "WhatsApp :",
+ "mode_sombre": "Mode sombre",
+ "mode_clair": "Mode clair",
+ "c_titre": "Commentaires",
+ "c_nom": "Votre nom",
+ "c_message": "Votre commentaire",
+ "c_envoyer": "Envoyer",
+ "c_merci": "Merci. Votre commentaire sera publié après relecture.",
+ "c_erreur": "L’envoi a échoué. Réessayez plus tard.",
+ "c_erreur_champs": "Merci de remplir votre nom et votre commentaire.",
+ "c_aucun": "Aucun commentaire publié pour l’instant.",
+ "c_avertissement": "Les commentaires sont relus avant d’être publiés."
+};
+var APPARENCE = {
+ "mode_defaut": "auto",
+ "bouton_mode": true
+};
+var COMMENTAIRES_CFG = {
+ "mode": "desactive",
+ "formulaire_url": "",
+ "cle_acces": ""
+};
+var COMMENTAIRES = [];
+var SITE = {
+ "bandeau_actif": true,
+ "bandeau_texte": "Version de travail : contenus à valider. Les crochets [ ] signalent une information à renseigner ou à vérifier.",
+ "titre": "Écrivain, chroniqueur, passeur de livres",
+ "soustitre": "Littérature, chronique, action culturelle et économie de la culture.",
+ "bouton1_texte": "Lire les textes",
+ "bouton1_lien": "#carnet",
+ "bouton2_texte": "Voir les livres",
+ "bouton2_lien": "#oeuvres",
+ "portrait": "/images/portrait.jpg",
+ "portrait_alt": "Portrait de Kalombo II, coiffé d’un béret noir, assis dehors près d’un livre",
+ "portrait_credit": "Photographie : Nathan Bushiri, 2025",
+ "apropos_court": "Kalombo II est écrivain, chroniqueur, opérateur culturel et enseignant. Il est l’auteur de *Divine poésie*, de *La Danse de Ndombolo* et du *Fleuve est pareil à ma peine*, et a contribué à plusieurs ouvrages collectifs.",
+ "contact_titre": "Une question, une proposition ?",
+ "contact_texte": "Pour échanger sur un texte, une recherche ou un projet. Réponse sous une semaine.",
+ "contact_bouton": "Écrire à l’auteur",
+ "texte": "Kalombo II est écrivain, chroniqueur, opérateur culturel et enseignant. Il est l’auteur de *Divine poésie* (Calures éditions, 2023), *La Danse de Ndombolo* (Éditions Mikanda, 2024) et *Le fleuve est pareil à ma peine* (Feuilles folles, 2025, finaliste du Prix National Prosper Gubarika), et a contribué à plusieurs ouvrages collectifs. Lauréat du Prix Zamenga de la nouvelle (2021, 2024) et du Prix Makomi poésie (2022), il préside Kiosque Littéraire, qu’il a fondé en 2023, et présente le podcast *Écriture*. Titulaire d’une licence (2024) et d’un master (2026) en Lettres et sciences humaines (Langues et Informatique appliquées aux Affaires et au Commerce), il mène des recherches doctorales en économie de la culture.",
+ "note": "[Phrase sur les prix à vérifier avant publication : voir « Prix et sélections » dans Œuvres.]",
+ "texte_recherche": "Économie de la culture, dans la branche du marketing des arts et de la culture. Licence (2024) et master (2026) en Lettres et sciences humaines à l’Université de Lubumbashi, département de Langues et Informatique Appliquées aux Affaires et au Commerce.",
+ "memoire_titre": "Marketing des œuvres littéraires congolaises à Lubumbashi : problèmes et remèdes",
+ "memoire_lien": "https://www.calures.org/en/books/book/f36f5171-00b2-499f-b3ae-565f8c27540b/",
+ "texte2": "Études doctorales en cours dans la même université ; sujet non encore arrêté.",
+ "note_recherche": "Autres recherches : pas de lien disponible pour l’instant. Cette rubrique ne présente aucune publication tant qu’aucune n’est documentée.",
+ "intro": "Pour échanger sur un texte, une recherche, un projet, une invitation ou un entretien. Réponse sous une semaine.",
+ "email": "danielkalombo02@gmail.com",
+ "whatsapp": "243846080341",
+ "whatsapp_affiche": "+243 846080341",
+ "lieu": "Lubumbashi, RDC",
+ "instagram": "https://www.instagram.com/kalombo_02_ecrivain",
+ "facebook": "https://www.facebook.com/danielkalombobinmukanya",
+ "kiosque": "https://www.kiosquelitteraire.org",
+ "note_contact": "Formulaire de contact et commentaires modérés : prévus avec le site définitif, car ils demandent un service d’envoi et de modération.",
+ "mentions": "Site édité par Kalombo II, +243 84 60 80 341. Hébergeur : [à définir]. [Rédaction à faire valider juridiquement.]",
+ "pied": "© 2026 Kalombo II. Dernière mise à jour : [date]."
+};
+var PRIX = [
+ {
+  "categorie": "prix",
+  "intitule": "Prix Zamenga de la nouvelle, 6e édition (2024)",
+  "detail": "« Tais-toi et pleure », texte retenu parmi les dix premiers. Organisé par la délégation générale Wallonie-Bruxelles en RDC. [rang exact à confirmer]",
+  "lien_libelle": "Source",
+  "lien_url": "https://actualite.cd/2024/09/16/prix-litteraire-zamenga-hananie-nsanda-jonathan-elenga-sharon-biangula-les-vainqueurs-de"
+ },
+ {
+  "categorie": "prix",
+  "intitule": "Prix Zamenga de la nouvelle, 2021",
+  "detail": "« État d’âme », dans *Sous haute sécurité à Buluo* (Mabiki, 2022). [À vérifier : le lien fourni concerne la 5e édition (septembre 2022) et ne cite pas ce texte ; les couvertures de *Divine poésie* et de *La Danse de Ndombolo* disent « nominé ».]",
+  "lien_libelle": "",
+  "lien_url": ""
+ },
+ {
+  "categorie": "prix",
+  "intitule": "Prix Makomi, poésie",
+  "detail": "Trois poèmes. Organisé par EUNIC RDC. [À vérifier : année (2022 ou 2023) et statut. Le lien fourni Prix Makomi 2023 cite une autre lauréate en poésie ; la couverture de *Divine poésie* dit « nominé ».]",
+  "lien_libelle": "Article de presse",
+  "lien_url": "https://actualite.cd/2023/02/15/litteratureprix-makomi-voici-les-laureats-de-la-5eme-edition"
+ },
+ {
+  "categorie": "selection",
+  "intitule": "Prix de la Jeune Plume 2024 (Cameroun)",
+  "detail": "Éditions de la Jeune Plume. *La Lettre des mouches*, roman inédit",
+  "lien_libelle": "",
+  "lien_url": ""
+ },
+ {
+  "categorie": "selection",
+  "intitule": "Prix littéraire international Rodrigue Assevedo (PLICRAA) 2024",
+  "detail": "Éditions Essaim Plumes. Recueil de poèmes « Ebrechures », inédit.",
+  "lien_libelle": "Site du prix",
+  "lien_url": "https://editionsessaimplumes.org/prix-litteraire/"
+ },
+ {
+  "categorie": "selection",
+  "intitule": "Bourse Poésie Gina Chenouard, SGDL, 2026",
+  "detail": "Société des gens de lettres, France. « morceau de poésie non ensevelie », inédit. [Lien direct à fournir]",
+  "lien_libelle": "",
+  "lien_url": ""
+ },
+ {
+  "categorie": "selection",
+  "intitule": "Prix international de l’invention poétique (Martinique)",
+  "detail": "Association Balisaille. « morceau de poésie non ensevelie », inédit. [Lien direct à fournir]",
+  "lien_libelle": "",
+  "lien_url": ""
+ },
+ {
+  "categorie": "selection",
+  "intitule": "Prix National Prosper Gubarika",
+  "detail": "Association Les Inattendus. *Le fleuve est pareil à ma peine* (Feuilles folles, 2025).",
+  "lien_libelle": "Article de l’ACP",
+  "lien_url": "https://acp.cd/culture/kinshasa-six-ecrivains-nomines-a-la-1ere-edition-du-prix-litteraire-prosper-gubarika/"
+ }
+];
+var AILLEURS = [
+ {
+  "titre": "Kiosque Littéraire",
+  "url": "https://www.kiosquelitteraire.org",
+  "detail": "Site de la plateforme, où paraissent *Les Lectures de Kalombo II* et *Je réfléchis à Haute-Voix* [liens directs vers chaque blog à confirmer]"
+ },
+ {
+  "titre": "La bande des journaleux",
+  "url": "https://www.kiosquelitteraire.org/posts/read-post/la-bande-des-journaleux/334/",
+  "detail": "Sur Kiosque Littéraire [nature de ce texte à préciser]"
+ },
+ {
+  "titre": "Chaîne WhatsApp",
+  "url": "https://whatsapp.com/channel/0029VaXYaoHJ3juzYYo4Mh2u",
+  "detail": "Pour *Écriture* et *Regard sur la littérature*"
+ }
+];
+var PROJETS = [
+ {
+  "organisation": "Kiosque Littéraire",
+  "role": "Au sein de l’organisation : président et fondateur, depuis 2023"
+ },
+ {
+  "organisation": "Association Les Jeunes talents",
+  "role": "Au sein de l’organisation : responsable des relations publiques, co-fondateur"
+ },
+ {
+  "organisation": "Calures éditions",
+  "role": "Au sein de l’organisation : directeur de communication et marketing, depuis 2024"
+ },
+ {
+  "organisation": "Association des Jeunes Écrivains du Congo (AJECO)",
+  "role": "Au sein de l’organisation : chargé d’extension (2024) ; responsable de la cellule Haut-Katanga [à confirmer]"
+ },
+ {
+  "organisation": "Cercle Culturel et Scientifique estudiantin Cogito Litteris",
+  "role": "Coordonnateur intérimaire en 2025, pendant quelques mois"
+ },
+ {
+  "organisation": "Lecture et correction",
+  "role": "Lecteur-correcteur dans cinq maisons d’édition et pour différents prix et concours"
+ },
+ {
+  "organisation": "Enseignement",
+  "role": "Enseignant de français dans le secondaire et précepteur"
+ },
+ {
+  "organisation": "Club de lecture Mudimbe",
+  "role": "Fondateur en 2025 et membre"
+ },
+ {
+  "organisation": "Collectif Rara Iuventus",
+  "role": "Membre depuis 2022"
+ }
+];

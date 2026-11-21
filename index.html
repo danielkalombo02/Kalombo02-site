@@ -5,166 +5,120 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Kalombo II — écrivain, chroniqueur, passeur de livres</title>
 <meta name="description" content="Site personnel de Kalombo II : livres, chroniques, recherche en économie de la culture et projets culturels, à Lubumbashi.">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;1,500&family=Newsreader:ital,wght@0,400;1,400&display=swap">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/theme.css">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 </head>
 <body>
-<div class="wip">Version de travail : contenus à valider. Les crochets [ ] signalent une information à renseigner ou à vérifier.</div>
+<div class="wip" id="bandeau"></div>
 <header><div class="w">
-<a class="nm" href="#accueil">Kalombo II</a>
-<nav aria-label="Navigation principale"><a href="#oeuvres">Œuvres</a><a href="#recherche">Recherche</a><a href="#carnet">Carnet</a><a href="#projets">Projets</a><a href="#galerie">Galerie</a><a href="#apropos">À propos</a><a href="#contact">Contact</a></nav>
+<a class="nm" href="#accueil" data-l="nom">Kalombo II</a>
+<nav aria-label="Navigation principale"><a href="#oeuvres" data-l="nav_oeuvres">Œuvres</a><a href="#recherche" data-l="nav_recherche">Recherche</a><a href="#carnet" data-l="nav_carnet">Carnet</a><a href="#projets" data-l="nav_projets">Projets</a><a href="#galerie" data-l="nav_galerie">Galerie</a><a href="#apropos" data-l="nav_apropos">À propos</a><a href="#contact" data-l="nav_contact">Contact</a></nav>
+<button type="button" id="mode" class="md"></button>
 </div></header>
 <main>
 <div class="w hero" data-pg="accueil">
 <div>
-<h1>Écrivain, chroniqueur, passeur de livres</h1>
-<p class="s">Littérature, chronique, action culturelle et économie de la culture.</p>
-<a class="b" href="#carnet">Lire les textes</a><a class="b2" href="#oeuvres">Voir les livres</a>
+<h1 id="h-titre"></h1>
+<p class="s" id="h-sous"></p>
+<a class="b" id="h-b1" href="#carnet"></a><a class="b2" id="h-b2" href="#oeuvres"></a>
 </div>
-<figure class="ph"><img src="images/portrait.jpg" width="640" height="853" id="portrait" alt="Portrait de Kalombo II, coiffé d’un béret noir, assis dehors près d’un livre"><figcaption>Photographie : Nathan Bushiri, 2025</figcaption></figure>
+<figure class="ph"><img src="images/portrait.jpg" width="640" height="853" id="portrait" alt=""><figcaption id="h-credit"></figcaption></figure>
 </div>
 
 <section data-pg="accueil"><div class="w">
-<h2>Citation du jour</h2>
+<h2 data-l="h_citation">Citation du jour</h2>
 <figure class="ci"><blockquote id="cq" class="tx"></blockquote><figcaption id="cs" class="n"></figcaption></figure>
 </div></section>
 
 <section data-pg="accueil"><div class="w">
-<h2>À propos</h2>
-<p class="tx">Kalombo II est écrivain, chroniqueur, opérateur culturel et enseignant. Il est l’auteur de <i>Divine poésie</i>, de <i>La Danse de Ndombolo</i> et du <i>Fleuve est pareil à ma peine</i>, et a contribué à plusieurs ouvrages collectifs.</p>
-<p><a class="b2" href="#apropos">Lire la suite</a></p>
+<h2 data-l="h_apropos">À propos</h2>
+<p class="tx" id="ac-court"></p>
+<p><a class="b2" href="#apropos" data-l="lire_suite">Lire la suite</a></p>
 </div></section>
 
 <section data-pg="accueil"><div class="w">
-<h2>Livres</h2>
+<h2 data-l="h_livres">Livres</h2>
 <div class="bks" id="bk-home"></div>
-<p><a class="b2" href="#oeuvres">Toutes les œuvres</a></p>
+<p><a class="b2" href="#oeuvres" data-l="toutes_oeuvres">Toutes les œuvres</a></p>
 </div></section>
 
 <section data-pg="accueil"><div class="w">
-<h2>Dans le Carnet</h2>
+<h2 data-l="h_carnet_accueil">Dans le Carnet</h2>
 <div id="htx"></div>
-<p><a class="b2" href="#carnet">Tous les textes</a></p>
+<p><a class="b2" href="#carnet" data-l="tous_textes">Tous les textes</a></p>
 </div></section>
 
 <section data-pg="accueil"><div class="w">
-<h2>Une question, une proposition ?</h2>
-<p class="tx">Pour échanger sur un texte, une recherche ou un projet. Réponse sous une semaine.</p>
-<a class="b" href="#contact">Écrire à l’auteur</a>
+<h2 id="ac-ct"></h2>
+<p class="tx" id="ac-cx"></p>
+<a class="b" id="ac-cb" href="#contact"></a>
 </div></section>
 
 <section data-pg="oeuvres"><div class="w">
-<h2>Œuvres</h2>
-<h3>Livres</h3>
+<h2 data-l="nav_oeuvres">Œuvres</h2>
+<h3 data-l="h_livres">Livres</h3>
 <div class="bks" id="bk-full"></div>
 </div></section>
 
 <section data-pg="oeuvres"><div class="w">
-<h3>Ouvrages collectifs et préfaces</h3>
+<h3 data-l="h_collectifs">Ouvrages collectifs et préfaces</h3>
 <div class="f" role="group" aria-label="Filtrer">
-<button type="button" data-f="all" aria-pressed="true">Tout</button>
-<button type="button" data-f="collectif" aria-pressed="false">Ouvrages collectifs</button>
-<button type="button" data-f="preface" aria-pressed="false">Préfaces</button>
-<input id="q" type="search" placeholder="Rechercher un titre, un éditeur, une année" aria-label="Rechercher dans les œuvres">
+<button type="button" data-f="all" aria-pressed="true" data-l="f_tout">Tout</button>
+<button type="button" data-f="collectif" aria-pressed="false" data-l="f_collectifs">Ouvrages collectifs</button>
+<button type="button" data-f="preface" aria-pressed="false" data-l="f_prefaces">Préfaces</button>
+<input id="q" type="search" placeholder="Rechercher un titre, un éditeur, une année" data-lp="f_placeholder" aria-label="Rechercher dans les œuvres">
 </div>
-<ul class="l" id="liste">
-<li data-t="collectif"><i>Écarté et autres nouvelles</i><span class="r">Feuilles folles, 2023. Nouvelle « Bella »</span></li>
-<li data-t="collectif"><i>Le Foulard de Naomie</i><span class="r">Heptade, 2023. Poème « Douce mort »</span></li>
-<li data-t="collectif"><i>Et puis un jour</i><span class="r">Feuilles folles, 2024. Nouvelle « Il ne restera de toi qu’une mémoire »</span></li>
-<li data-t="collectif"><i>Amorces de récits ; en soutien à Boualem Sansal</i><span class="r">Pen Belgique, 2025. Texte « Sansal n’est pas un saint sale »</span></li>
-<li data-t="collectif"><i>Afurakano</i><span class="r">Maison TV5 Monde Kampala, 2025. Poème « Detta »</span></li>
-<li data-t="collectif"><i>L’hymne à la grâce</i><span class="r">Sous la direction de Blaise Ndala. Éditions Mlimani, Continents et Nzoi, 2026</span></li>
-<li data-t="collectif"><i>Ekosimba</i>, anthologie congolaise de poésie contemporaine<span class="r">Éditions Mlimani, 2026</span></li>
-<li data-t="preface">Préface à <i>L’Herbe blanche</i>, de Georges Lwembe M.<span class="r">Calures éditions, 2022</span></li>
-<li data-t="preface">Préface à <i>Melankwolia</i>, de Saphnath-Panéa Muka<span class="r">Calures éditions, 2024</span></li>
-<li data-t="preface">Préface à <i>Goma. Du sang sur l’or</i>, de Saphnath-Panéa Muka et Paul Mwadi<span class="r">Calures éditions, 2024</span></li>
-<li data-t="preface">Préface à <i>Sorcellerie ou mythologie africaine</i>, de François-Lambert Kiyonge<span class="r">Calures éditions, 2024</span></li>
-<li data-t="preface">Préface à <i>Les Délires d’une croc-niqueuse</i>, de Kakera Lmg<span class="r">Calures éditions, 2025</span></li>
-<li data-t="preface">Préface à <i>L’Abîme étoilé</i>, de Sir Hakim<span class="r">Bookin Editions, 2026</span></li>
-<li data-t="preface">Préface à <i>Les Continents de mon âme</i>, de Sophie Muret<span class="r">Bookin Editions, 2026</span></li>
-</ul>
-<p id="none" class="n" hidden>Aucune œuvre ne correspond à cette recherche.</p>
+<ul class="l" id="liste"></ul>
+<p id="none" class="n" hidden data-l="f_aucun">Aucune œuvre ne correspond à cette recherche.</p>
 </div></section>
 
 <section id="distinctions" data-pg="oeuvres"><div class="w">
-<h2>Prix et sélections</h2>
-<h3>Prix</h3>
-<ul class="l">
-<li>Prix Zamenga de la nouvelle, 6e édition (2024)<span class="r">« Tais-toi et pleure », texte retenu parmi les dix premiers. Organisé par la délégation générale Wallonie-Bruxelles en RDC. <a href="https://actualite.cd/2024/09/16/prix-litteraire-zamenga-hananie-nsanda-jonathan-elenga-sharon-biangula-les-vainqueurs-de" target="_blank" rel="noopener">Source</a> [rang exact à confirmer]</span></li>
-<li>Prix Zamenga de la nouvelle, 2021<span class="r">« État d’âme », dans <i>Sous haute sécurité à Buluo</i> (Mabiki, 2022). [À vérifier : le lien fourni concerne la 5e édition (septembre 2022) et ne cite pas ce texte ; les couvertures de <i>Divine poésie</i> et de <i>La Danse de Ndombolo</i> disent « nominé ».]</span></li>
-<li>Prix Makomi, poésie<span class="r">Trois poèmes. Organisé par EUNIC RDC. [À vérifier : année (2022 ou 2023) et statut. Le lien fourni <a href="https://actualite.cd/2023/02/15/litteratureprix-makomi-voici-les-laureats-de-la-5eme-edition" target="_blank" rel="noopener">Prix Makomi 2023</a> cite une autre lauréate en poésie ; la couverture de <i>Divine poésie</i> dit « nominé ».]</span></li>
-</ul>
-<h3 style="margin-top:28px">Sélections (finaliste)</h3>
-<ul class="l">
-<li>Prix de la Jeune Plume 2024 (Cameroun)<span class="r">Éditions de la Jeune Plume. <i>La Lettre des mouches</i>, roman inédit</span></li>
-<li>Prix littéraire international Rodrigue Assevedo (PLICRAA) 2024<span class="r">Éditions Essaim Plumes. Recueil de poèmes « Ebrechures », inédit. <a href="https://editionsessaimplumes.org/prix-litteraire/" target="_blank" rel="noopener">Site du prix</a></span></li>
-<li>Bourse Poésie Gina Chenouard, SGDL, 2026<span class="r">Société des gens de lettres, France. « morceau de poésie non ensevelie », inédit. [Lien direct à fournir]</span></li>
-<li>Prix international de l’invention poétique (Martinique)<span class="r">Association Balisaille. « morceau de poésie non ensevelie », inédit. [Lien direct à fournir]</span></li>
-<li>Prix National Prosper Gubarika<span class="r">Association Les Inattendus. <i>Le fleuve est pareil à ma peine</i> (Feuilles folles, 2025). <a href="https://acp.cd/culture/kinshasa-six-ecrivains-nomines-a-la-1ere-edition-du-prix-litteraire-prosper-gubarika/" target="_blank" rel="noopener">Article de l’ACP</a></span></li>
-</ul>
+<h2 data-l="h_prix">Prix et sélections</h2>
+<div id="prix"></div>
 </div></section>
+
 <section id="recherche" data-pg="recherche"><div class="w">
-<h2>Recherche</h2>
-<p class="tx">Économie de la culture, dans la branche du marketing des arts et de la culture. Licence (2024) et master (2026) en Lettres et sciences humaines à l’Université de Lubumbashi, département de Langues et Informatique Appliquées aux Affaires et au Commerce. Mémoire : <a href="https://www.calures.org/en/books/book/f36f5171-00b2-499f-b3ae-565f8c27540b/" target="_blank" rel="noopener"><i>Marketing des œuvres littéraires congolaises à Lubumbashi&nbsp;: problèmes et remèdes</i></a>. Études doctorales en cours dans la même université ; sujet non encore arrêté.</p>
-<p class="n">Autres recherches : pas de lien disponible pour l’instant. Cette rubrique ne présente aucune publication tant qu’aucune n’est documentée.</p>
+<h2 data-l="nav_recherche">Recherche</h2>
+<div id="rech"></div>
 </div></section>
 
 <section id="carnet" data-pg="carnet"><div class="w">
-<h2>Carnet</h2>
-<p class="tx">Poèmes, nouvelles, réflexions, chroniques et extraits.</p>
+<h2 data-l="nav_carnet">Carnet</h2>
+<p class="tx" data-l="carnet_intro">Poèmes, nouvelles, réflexions, chroniques et extraits.</p>
 <div id="blog"></div>
-<h3 style="margin-top:40px">Ailleurs</h3>
-<ul class="l">
-<li><a href="https://www.kiosquelitteraire.org" target="_blank" rel="noopener">Kiosque Littéraire</a><span class="r">Site de la plateforme, où paraissent <i>Les Lectures de Kalombo II</i> et <i>Je réfléchis à Haute-Voix</i> [liens directs vers chaque blog à confirmer]</span></li>
-<li><a href="https://www.kiosquelitteraire.org/posts/read-post/la-bande-des-journaleux/334/" target="_blank" rel="noopener">La bande des journaleux</a><span class="r">Sur Kiosque Littéraire [nature de ce texte à préciser]</span></li>
-<li><a href="https://whatsapp.com/channel/0029VaXYaoHJ3juzYYo4Mh2u" target="_blank" rel="noopener">Chaîne WhatsApp</a><span class="r">Pour <i>Écriture</i> et <i>Regard sur la littérature</i></span></li>
-</ul>
+<h3 style="margin-top:40px" data-l="h_ailleurs">Ailleurs</h3>
+<ul class="l" id="ailleurs"></ul>
 </div></section>
 
 <section id="projets" data-pg="projets"><div class="w">
-<h2>Projets et activités</h2>
-<ul class="l">
-<li>Kiosque Littéraire<span class="r">Au sein de l’organisation : président et fondateur, depuis 2023</span></li>
-<li>Association Les Jeunes talents<span class="r">Au sein de l’organisation : responsable des relations publiques, co-fondateur</span></li>
-<li>Calures éditions<span class="r">Au sein de l’organisation : directeur de communication et marketing, depuis 2024</span></li>
-<li>Association des Jeunes Écrivains du Congo (AJECO)<span class="r">Au sein de l’organisation : chargé d’extension (2024) ; responsable de la cellule Haut-Katanga [à confirmer]</span></li>
-<li>Cercle Culturel et Scientifique estudiantin Cogito Litteris<span class="r">Coordonnateur intérimaire en 2025, pendant quelques mois</span></li>
-<li>Lecture et correction<span class="r">Lecteur-correcteur dans cinq maisons d’édition et pour différents prix et concours</span></li>
-<li>Enseignement<span class="r">Enseignant de français dans le secondaire et précepteur</span></li>
-<li>Club de lecture Mudimbe<span class="r">Fondateur en 2025 et membre</span></li>
-<li>Collectif Rara Iuventus<span class="r">Membre depuis 2022</span></li>
-</ul>
-
+<h2 data-l="h_projets">Projets et activités</h2>
+<ul class="l" id="projets-liste"></ul>
 </div></section>
 
 <section id="galerie" data-pg="galerie"><div class="w">
-<h2>Galerie</h2>
+<h2 data-l="nav_galerie">Galerie</h2>
 <div id="gal" class="gal"></div>
-<p class="n">Photographies : [légendes et crédits à renseigner pour chaque nouvelle image].</p>
-<dialog id="dlg"><img alt=""><p class="n"></p><button type="button" class="sx">Fermer</button></dialog>
+<p class="n" data-l="galerie_note"></p>
+<dialog id="dlg"><img alt=""><p class="n"></p><button type="button" class="sx" data-l="fermer">Fermer</button></dialog>
 </div></section>
 
 <section id="apropos" data-pg="apropos"><div class="w">
-<h2>À propos</h2>
-<p class="tx">Kalombo II est écrivain, chroniqueur, opérateur culturel et enseignant. Il est l’auteur de <i>Divine poésie</i> (Calures éditions, 2023), <i>La Danse de Ndombolo</i> (Éditions Mikanda, 2024) et <i>Le fleuve est pareil à ma peine</i> (Feuilles folles, 2025, finaliste du Prix National Prosper Gubarika), et a contribué à plusieurs ouvrages collectifs. Lauréat du Prix Zamenga de la nouvelle (2021, 2024) et du Prix Makomi poésie (2022), il préside Kiosque Littéraire, qu’il a fondé en 2023, et présente le podcast <i>Écriture</i>. Titulaire d’une licence (2024) et d’un master (2026) en Lettres et sciences humaines (Langues et Informatique appliquées aux Affaires et au Commerce), il mène des recherches doctorales en économie de la culture.</p>
-<p class="n">Ses rôles et activités sont détaillés dans la rubrique <a href="#projets">Projets</a>.</p>
-<p class="n">[Phrase sur les prix à vérifier avant publication : voir « Prix et sélections » dans Œuvres.]</p>
+<h2 data-l="nav_apropos">À propos</h2>
+<div id="ap"></div>
+<p class="n"><span data-l="renvoi_projets">Ses rôles et activités sont détaillés dans la rubrique</span> <a href="#projets" data-l="nav_projets">Projets</a>.</p>
+<p class="n" id="ap-note"></p>
 </div></section>
 
 <section id="contact" data-pg="contact"><div class="w">
-<h2>Contact</h2>
-<p class="tx">Pour échanger sur un texte, une recherche, un projet, une invitation ou un entretien. Réponse sous une semaine.</p>
-<p class="tx"><a href="mailto:danielkalombo02@gmail.com">danielkalombo02@gmail.com</a><br><a href="https://wa.me/243846080341" target="_blank" rel="noopener">WhatsApp : +243 846080341</a><br>Lubumbashi, RDC</p>
-<p class="tx"><a href="https://www.instagram.com/kalombo_02_ecrivain" target="_blank" rel="noopener">Instagram</a><br><a href="https://www.facebook.com/danielkalombobinmukanya" target="_blank" rel="noopener">Facebook</a><br><a href="https://www.kiosquelitteraire.org" target="_blank" rel="noopener">Kiosque Littéraire</a></p>
-<p class="n">Formulaire de contact et commentaires modérés : prévus avec le site définitif, car ils demandent un service d’envoi et de modération.</p>
-<h3 style="margin-top:40px">Mentions légales</h3>
-<p class="n" style="margin-top:4px">Site édité par Kalombo II, +243 84 60 80 341. Hébergeur : [à définir]. [Rédaction à faire valider juridiquement.]</p>
+<h2 data-l="nav_contact">Contact</h2>
+<div id="ct"></div>
 </div></section>
 </main>
 
 <footer><div class="w">
-<p><a href="#oeuvres">Œuvres</a> <a href="#recherche">Recherche</a> <a href="#carnet">Carnet</a> <a href="#projets">Projets</a> <a href="#galerie">Galerie</a> <a href="#apropos">À propos</a> <a href="#contact">Contact et mentions légales</a></p>
-<p>© 2026 Kalombo II. Dernière mise à jour : [date].</p>
+<p><a href="#oeuvres" data-l="nav_oeuvres">Œuvres</a> <a href="#recherche" data-l="nav_recherche">Recherche</a> <a href="#carnet" data-l="nav_carnet">Carnet</a> <a href="#projets" data-l="nav_projets">Projets</a> <a href="#galerie" data-l="nav_galerie">Galerie</a> <a href="#apropos" data-l="nav_apropos">À propos</a> <a href="#contact" data-l="pied_contact">Contact et mentions légales</a></p>
+<p id="pied"></p>
 </div></footer>
 
 <script src="js/data.js"></script>
