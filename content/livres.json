@@ -25,7 +25,7 @@
       "genre": "Chroniques",
       "editeur": "Éditions Mikanda",
       "annee": 2024,
-      "preface": "Youssef Branh",
+      "preface": "Préface de Youssef Branh",
       "isbn": "979-8-33504-056-3",
       "couverture": "/images/couverture-danse.jpg",
       "liens": [
@@ -38,7 +38,7 @@
           "url": "https://www.amazon.fr/danse-Ndombolo-Kalombo-II/dp/B0DC6WKKC6"
         },
         {
-          "libelle": "Éditeur",
+          "libelle": "Éditeur : Mikanda",
           "url": "https://www.editionsmikanda.com/"
         }
       ],
@@ -58,11 +58,11 @@
           "url": "https://www.kiosquelitteraire.org/bookstore/read-book-details/un-livre-sur-kiosque-litteraire/1"
         },
         {
-          "libelle": "Éditeur",
+          "libelle": "Éditeur : Calures",
           "url": "https://www.calures.org/"
         }
       ],
-      "citation": ""
+      "citation": "Décrit comme un cri du cœur poétique, l'ouvrage redéfinit l'enfer non pas comme un concept abstrait, mais comme une réalité humaine vécue, tout en plaidant pour l'empathie et la compassion envers les personnes qui souffrent."
     }
   ]
 }
