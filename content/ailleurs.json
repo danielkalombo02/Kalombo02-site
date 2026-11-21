@@ -3,17 +3,27 @@
     {
       "titre": "Kiosque Littéraire",
       "url": "https://www.kiosquelitteraire.org",
-      "detail": "Site de la plateforme, où paraissent *Les Lectures de Kalombo II* et *Je réfléchis à Haute-Voix* [liens directs vers chaque blog à confirmer]"
+      "detail": "Site de la plateforme, où paraissent *Les Lectures de Kalombo II* et *Je réfléchis à Haute-Voix*"
     },
     {
-      "titre": "La bande des journaleux",
+      "titre": "Je réfléchis à haute-voix",
       "url": "https://www.kiosquelitteraire.org/posts/read-post/la-bande-des-journaleux/334/",
-      "detail": "Sur Kiosque Littéraire [nature de ce texte à préciser]"
+      "detail": "Chronique publiée sur le site de Kiosque Littéraire."
     },
     {
-      "titre": "Chaîne WhatsApp",
+      "titre": "Chaine WhatsApp Les Lectures de Kalombo II",
+      "url": "https://whatsapp.com/channel/0029VayvskVIHphL6dx86x24",
+      "detail": "Chaine WhatsApp où paraissent les Lectures de Kalombo II (Journal)."
+    },
+    {
+      "titre": "Chaine WhatsApp Regard sur la littérature",
       "url": "https://whatsapp.com/channel/0029VaXYaoHJ3juzYYo4Mh2u",
-      "detail": "Pour *Écriture* et *Regard sur la littérature*"
+      "detail": "Chaine WhatsApp Regard sur la littérature"
+    },
+    {
+      "titre": "Podcast Ecriture",
+      "url": "https://on.soundcloud.com/o38sEOcQ1ZIUi7cx81",
+      "detail": "Lien vers le Podcast Ecriture et Regard sur la littérature / SoundCloud"
     }
   ]
 }
