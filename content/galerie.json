@@ -2,9 +2,15 @@
   "photos": [
     {
       "image": "/images/portrait.jpg",
-      "alt": "Portrait de Kalombo II, coiffé d’un béret noir, assis dehors près d’un livre",
       "legende": "Portrait",
-      "credit": "Nathan Bushiri, 2025"
+      "credit": "Nathan Bushiri, 2025",
+      "alt": "Portrait de Kalombo II, coiffé d’un béret noir, assis dehors près d’un livre"
+    },
+    {
+      "image": "/images/1784793878752.jpg",
+      "legende": "Kalombo II",
+      "credit": "",
+      "alt": ""
     }
   ]
 }
