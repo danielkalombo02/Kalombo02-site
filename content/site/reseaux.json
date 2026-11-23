@@ -1,0 +1,17 @@
+{
+  "affichage": "icones",
+  "reseaux": [
+    {
+      "libelle": "Instagram",
+      "url": "https://www.instagram.com/kalombo_02_ecrivain"
+    },
+    {
+      "libelle": "Facebook",
+      "url": "https://www.facebook.com/danielkalombobinmukanya"
+    },
+    {
+      "libelle": "WhatsApp",
+      "url": "https://wa.me/243846080341"
+    }
+  ]
+}

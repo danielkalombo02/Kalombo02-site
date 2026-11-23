@@ -8,14 +8,21 @@ const rel = p => String(p || '').replace(/^\/+/, '');
 const dir = path.join('content', 'textes');
 const textes = (fs.existsSync(dir) ? fs.readdirSync(dir).filter(f => f.endsWith('.json')) : []).map(f => {
   const d = lire(path.join(dir, f));
-  return { id: f.replace(/\.json$/, ''), titre: d.titre || '', date: d.date ? String(d.date).slice(0, 10) : '', cat: d.categorie || 'Chroniques', texte: String(d.texte || '') };
+  return { id: f.replace(/\.json$/, ''), titre: d.titre || '', date: d.date ? String(d.date).slice(0, 10) : '', cat: d.categorie || 'Chroniques', texte: String(d.texte || ''), img: rel(d.image), img_alt: d.image_alt || '', img_leg: d.image_legende || '' };
 });
 textes.sort((a, b) => (a.date && b.date) ? (a.date < b.date ? 1 : a.date > b.date ? -1 : a.id.localeCompare(b.id)) : a.date ? -1 : b.date ? 1 : a.id.localeCompare(b.id));
 
 // Livres, citations, galerie, ouvrages
 const livres = (lire('content/livres.json').livres || []).map(b => ({ c: rel(b.couverture), t: b.titre || '', g: b.genre || '', e: b.editeur || '', y: b.annee || '', p: b.preface || '', n: b.isbn || '', l: (b.liens || []).map(k => [k.libelle, k.url]), q: b.citation || '' }));
 const citations = (lire('content/citations.json').citations || []).map(q => ({ t: q.texte, a: q.auteur }));
-const galerie = (lire('content/galerie.json').photos || []).map(g => ({ src: rel(g.image), alt: g.alt || '', leg: g.legende || '', cr: g.credit || '' }));
+let galerie = (lire('content/galerie.json').photos || []).map(g => ({ src: rel(g.image), alt: g.alt || '', leg: g.legende || '', cr: g.credit || '' }));
+// Photos déposées en lot dans images/galerie : ajoutées automatiquement à la suite
+const gdir = path.join('images', 'galerie');
+if (fs.existsSync(gdir)) {
+  const deja = new Set(galerie.map(g => g.src.toLowerCase()));
+  fs.readdirSync(gdir).filter(f => /\.(jpe?g|png|webp|gif|avif)$/i.test(f)).sort((x, y) => x.localeCompare(y, 'fr', { numeric: true }))
+    .forEach(f => { const s = 'images/galerie/' + f; if (!deja.has(s.toLowerCase())) galerie.push({ src: s, alt: '', leg: '', cr: '' }); });
+}
 const ouvrages = lire('content/ouvrages.json').ouvrages || [];
 
 // Pages du site : tout est regroupé dans l'objet SITE
@@ -32,6 +39,9 @@ const SITE = Object.assign({}, accueil, {
 const prix = lire('content/prix.json').prix || [];
 const ailleurs = lire('content/ailleurs.json').liens || [];
 const projets = lire('content/projets.json').projets || [];
+const rs = lire('content/site/reseaux.json');
+const reseaux = rs.reseaux || [];
+const reseauxAff = rs.affichage === 'texte' ? 'texte' : 'icones';
 
 // Libellés (menus, titres, boutons), apparence, commentaires
 const flat = o => Object.keys(o).reduce((a, k) => Object.assign(a, (o[k] && typeof o[k] === 'object') ? o[k] : { [k]: o[k] }), {});
@@ -93,6 +103,45 @@ const J = o => JSON.stringify(o, null, 1);
 const out = '// FICHIER GÉNÉRÉ AUTOMATIQUEMENT par build.js à partir du dossier content/. Ne le modifiez pas à la main.\n' +
   'var TEXTES = ' + J(textes) + ';\nvar LIVRES = ' + J(livres) + ';\nvar CITATIONS = ' + J(citations) + ';\nvar GALERIE = ' + J(galerie) + ';\nvar OUVRAGES = ' + J(ouvrages) + ';\n' +
   'var LIB = ' + J(LIB) + ';\nvar APPARENCE = ' + J(APPARENCE) + ';\nvar COMMENTAIRES_CFG = ' + J(COMMENTAIRES_CFG) + ';\nvar COMMENTAIRES = ' + J(COMMENTAIRES) + ';\n' +
+  'var RESEAUX = ' + J(reseaux) + ';\nvar RESEAUX_AFF = ' + J(reseauxAff) + ';\nvar PARTAGE_URL = ' + J(/^https:\/\/[A-Za-z0-9.-]+$/.test(String(lire('content/site/partage.json').url || '').trim().replace(/\/+$/, '')) ? String(lire('content/site/partage.json').url).trim().replace(/\/+$/, '') : '') + ';\n' +
   'var SITE = ' + J(SITE) + ';\nvar PRIX = ' + J(prix) + ';\nvar AILLEURS = ' + J(ailleurs) + ';\nvar PROJETS = ' + J(projets) + ';\n';
 fs.writeFileSync(path.join('js', 'data.js'), out);
-console.log('data.js généré :', textes.length, 'textes,', livres.length, 'livres,', citations.length, 'citations,', galerie.length, 'photos,', ouvrages.length, 'ouvrages,', prix.length, 'prix,', projets.length, 'projets');
+
+// Aperçu de partage (WhatsApp, Facebook, Google), plan du site et robots.txt
+const pt = lire('content/site/partage.json');
+const esc = s => String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const urlSite = String(pt.url || '').trim().replace(/\/+$/, '');
+const base = /^https:\/\/[A-Za-z0-9.-]+$/.test(urlSite) ? urlSite : '';
+const imgAbs = base && pt.image ? base + '/' + rel(pt.image) : '';
+const bloc = ['<!--PARTAGE-->', '<title>' + esc(pt.titre) + '</title>', '<meta name="description" content="' + esc(pt.description) + '">',
+  base ? '<link rel="canonical" href="' + base + '/">' : '', '<meta property="og:type" content="website">', '<meta property="og:site_name" content="' + esc(LIB.nom) + '">',
+  '<meta property="og:title" content="' + esc(pt.titre) + '">', '<meta property="og:description" content="' + esc(pt.description) + '">',
+  base ? '<meta property="og:url" content="' + base + '/">' : '', imgAbs ? '<meta property="og:image" content="' + imgAbs + '">' : '', '<meta property="og:locale" content="fr_FR">',
+  '<meta name="twitter:card" content="' + (imgAbs ? 'summary_large_image' : 'summary') + '">', '<meta name="twitter:title" content="' + esc(pt.titre) + '">',
+  '<meta name="twitter:description" content="' + esc(pt.description) + '">', imgAbs ? '<meta name="twitter:image" content="' + imgAbs + '">' : '', '<!--/PARTAGE-->'].filter(Boolean).join('\n');
+let html = fs.readFileSync('index.html', 'utf8');
+html = html.replace(/<!--PARTAGE-->[\s\S]*?<!--\/PARTAGE-->/, () => bloc);
+fs.writeFileSync('index.html', html);
+// Une page de partage par texte (aperçu WhatsApp/Facebook avec la photo du texte), puis redirection vers le site
+fs.rmSync('t', { recursive: true, force: true });
+const urls = [base + '/'];
+if (base) {
+  const extrait = t => { const p = String(t.texte || '').split(/\n+/).find(l => l.trim().length > 40) || String(t.texte || ''); let s = p.replace(/\s+/g, ' ').trim(); if (s.length > 190) s = s.slice(0, 190).replace(/\s+\S*$/, '') + '…'; return s; };
+  textes.forEach(t => {
+    if (!/^[a-z0-9-]+$/.test(t.id)) return;
+    const page = base + '/t/' + t.id + '/';
+    const img = t.img ? base + '/' + encodeURI(t.img) : imgAbs;
+    const tags = ['<meta charset="utf-8">', '<meta name="viewport" content="width=device-width, initial-scale=1">', '<title>' + esc(t.titre) + ' — ' + esc(LIB.nom) + '</title>',
+      '<meta name="description" content="' + esc(extrait(t)) + '">', '<link rel="canonical" href="' + page + '">', '<meta property="og:type" content="article">',
+      '<meta property="og:site_name" content="' + esc(LIB.nom) + '">', '<meta property="og:title" content="' + esc(t.titre) + '">', '<meta property="og:description" content="' + esc(extrait(t)) + '">',
+      '<meta property="og:url" content="' + page + '">', img ? '<meta property="og:image" content="' + img + '">' : '', '<meta property="og:locale" content="fr_FR">',
+      '<meta name="twitter:card" content="' + (img ? 'summary_large_image' : 'summary') + '">', '<meta name="twitter:title" content="' + esc(t.titre) + '">',
+      '<meta name="twitter:description" content="' + esc(extrait(t)) + '">', img ? '<meta name="twitter:image" content="' + img + '">' : ''].filter(Boolean).join('\n');
+    fs.mkdirSync(path.join('t', t.id), { recursive: true });
+    fs.writeFileSync(path.join('t', t.id, 'index.html'), '<!DOCTYPE html>\n<html lang="fr">\n<head>\n' + tags + '\n<script>location.replace("/#a-' + t.id + '")</script>\n</head>\n<body>\n<p><a href="/#a-' + t.id + '">' + esc(t.titre) + '</a></p>\n</body>\n</html>\n');
+    urls.push(page);
+  });
+  fs.writeFileSync('robots.txt', 'User-agent: *\nAllow: /\n\nSitemap: ' + base + '/sitemap.xml\n');
+  const jour = new Date().toISOString().slice(0, 10);
+  fs.writeFileSync('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + urls.map(u => '  <url><loc>' + u + '</loc><lastmod>' + jour + '</lastmod></url>').join('\n') + '\n</urlset>\n');
+}

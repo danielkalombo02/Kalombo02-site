@@ -6,7 +6,7 @@ backend:
   branch: main
 
 locale: fr
-site_url: https://kalombo-02-blog.onrender.com
+site_url: https://www.kalombo02.com
 media_folder: images
 public_folder: /images
 
@@ -31,6 +31,9 @@ collections:
         name: categorie
         widget: select
         options: [Poésie, Nouvelles, Réflexions, Chroniques, Extraits]
+      - { label: "Photo du texte (facultatif)", name: image, widget: image, required: false }
+      - { label: "Description de la photo (pour les personnes qui ne la voient pas)", name: image_alt, widget: string, required: false }
+      - { label: "Légende ou crédit de la photo (facultatif)", name: image_legende, widget: string, required: false }
       - { label: "Texte", name: texte, widget: text, hint: "Une ligne vide sépare deux paragraphes. Les retours à la ligne sont conservés (utile pour les poèmes)." }
 
   - name: pages
@@ -134,6 +137,33 @@ collections:
               - { label: "Adresse (https://…)", name: url, widget: string }
               - { label: "Détail (facultatif)", name: detail, widget: text, required: false }
 
+      - label: "Réseaux sociaux (barre du haut)"
+        name: reseaux
+        file: content/site/reseaux.json
+        fields:
+          - label: "Affichage dans la barre du haut"
+            name: affichage
+            widget: select
+            options:
+              - { label: "Icônes", value: icones }
+              - { label: "Noms écrits", value: texte }
+          - label: "Réseaux"
+            name: reseaux
+            widget: list
+            summary: "{{fields.libelle}}"
+            fields:
+              - { label: "Nom du réseau (Instagram, Facebook, WhatsApp, YouTube, LinkedIn, X, TikTok, Telegram : l'icône est choisie d'après ce nom)", name: libelle, widget: string }
+              - { label: "Adresse (https://…)", name: url, widget: string }
+
+      - label: "Partage : aperçu WhatsApp, Facebook, Google"
+        name: partage
+        file: content/site/partage.json
+        fields:
+          - { label: "Adresse du site (https://…, sans / à la fin)", name: url, widget: string }
+          - { label: "Titre de l'aperçu", name: titre, widget: string }
+          - { label: "Description de l'aperçu (environ 150 caractères)", name: description, widget: text }
+          - { label: "Image de l'aperçu (1200 × 630 px, moins de 300 Ko)", name: image, widget: image }
+
       - label: "Textes du site : menus, titres, boutons"
         name: libelles
         file: content/site/libelles.json
@@ -201,6 +231,9 @@ collections:
               - { label: "Préfixe devant le numéro WhatsApp", name: whatsapp_prefixe, widget: string }
               - { label: "Bouton : passer au mode sombre", name: mode_sombre, widget: string }
               - { label: "Bouton : passer au mode clair", name: mode_clair, widget: string }
+              - { label: "Bouton : partager un texte", name: partager, widget: string }
+              - { label: "Message : lien copié", name: lien_copie, widget: string }
+              - { label: "Texte avant le lien à partager", name: lien_partage, widget: string }
               - { label: "Commentaires : titre", name: c_titre, widget: string }
               - { label: "Commentaires : champ nom", name: c_nom, widget: string }
               - { label: "Commentaires : champ message", name: c_message, widget: string }
@@ -335,20 +368,6 @@ collections:
               - { label: "Citation", name: texte, widget: text }
               - { label: "Auteur", name: auteur, widget: string }
 
-      - label: Galerie photo
-        name: galerie
-        file: content/galerie.json
-        fields:
-          - label: Photos
-            name: photos
-            widget: list
-            summary: "{{fields.legende}}"
-            fields:
-              - { label: "Photo", name: image, widget: image }
-              - { label: "Légende", name: legende, widget: string }
-              - { label: "Crédit photo", name: credit, widget: string, required: false }
-              - { label: "Description pour l'accessibilité", name: alt, widget: string, required: false }
-
   - name: commentaires
     label: Commentaires approuvés
     label_singular: Commentaire
@@ -363,3 +382,24 @@ collections:
       - { label: "Auteur du commentaire", name: auteur, widget: string }
       - { label: "Date", name: date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD", required: false }
       - { label: "Commentaire (copié depuis l'e-mail reçu, après relecture)", name: texte, widget: text }
+
+  - name: galerie
+    label: Galerie photo
+    media_folder: images/galerie
+    public_folder: /images/galerie
+    files:
+      - label: "Photos de la galerie (légendes et crédits)"
+        name: galerie
+        file: content/galerie.json
+        media_folder: images/galerie
+        public_folder: /images/galerie
+        fields:
+          - label: Photos
+            name: photos
+            widget: list
+            summary: "{{fields.legende}}"
+            fields:
+              - { label: "Photo", name: image, widget: image }
+              - { label: "Légende", name: legende, widget: string }
+              - { label: "Crédit photo", name: credit, widget: string, required: false }
+              - { label: "Description pour l'accessibilité", name: alt, widget: string, required: false }

@@ -1,5 +1,5 @@
 {
-  "mode": "formulaire",
-  "formulaire_url": "https://api.web3forms.com/submit",
-  "cle_acces": "1be7073a-050d-410f-b041-bc800da6ad79"
+  "mode": "desactive",
+  "formulaire_url": "",
+  "cle_acces": ""
 }

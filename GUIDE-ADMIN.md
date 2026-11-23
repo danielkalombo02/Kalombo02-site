@@ -3,9 +3,9 @@
 Ce guide vous permet d'ajouter des textes, livres, photos et citations à votre site sans écrire de code.
 
 Vos informations, déjà inscrites dans les fichiers :
-- Site : https://kalombo-02-blog.onrender.com
+- Site : https://www.kalombo02.com (adresse Render de secours : https://kalombo-02-blog.onrender.com)
 - GitHub : identifiant `danielkalombo02`, dépôt `Kalombo02-site`
-- Administration : https://kalombo-02-blog.onrender.com/admin/
+- Administration : https://www.kalombo02.com/admin/
 
 **Prévoyez 30 minutes, un ordinateur, et un navigateur récent (Chrome, Edge, Firefox ou Safari).**
 
@@ -219,3 +219,65 @@ Pour supprimer un commentaire, ouvrez-le dans la même rubrique et supprimez-le.
 Pour **désactiver** les commentaires : *Commentaires : réglages*, mode « Désactivés ».
 
 *Précaution :* relisez chaque commentaire avant de le publier, car vous êtes responsable de ce qui s'affiche sur votre site.
+
+---
+
+## Partie J. Ajouter une photo à un texte du Carnet
+
+Dans l'administration, ouvrez un texte (ou créez-en un) : sous la catégorie, trois champs facultatifs apparaissent :
+- **Photo du texte** : cliquez pour téléverser une image (de préférence moins de 1 Mo : réduisez-la avant si besoin).
+- **Description de la photo** : une phrase courte pour les personnes qui ne voient pas l'image (par exemple « Livre posé sur une table, devant un fleuve »).
+- **Légende ou crédit** : par exemple « Photographie : Nom du photographe, 2026 ».
+
+La photo s'affiche en tête du texte, et en petite vignette dans les listes du Carnet. Un texte sans photo s'affiche comme avant.
+
+---
+
+## Partie K. Ajouter plusieurs photos d'un coup dans la Galerie
+
+Toute photo placée dans le dossier **`images/galerie`** de votre dépôt s'ajoute **automatiquement** à la galerie, à la suite de celles déjà décrites. Il n'y a rien d'autre à faire.
+
+**Méthode 1 : depuis l'administration**
+1. Ouvrez `/admin/`, puis la **bibliothèque de médias** (menu « Médias » ou « Assets », le nom peut varier).
+2. Choisissez le dossier de la **Galerie photo**, puis **glissez toutes vos photos d'un coup** (ou « Téléverser » en sélectionnant plusieurs fichiers).
+
+**Méthode 2 : depuis GitHub (depuis un ordinateur)**
+1. Sur votre ordinateur, créez un dossier nommé `galerie` et mettez-y vos photos.
+2. Sur GitHub, ouvrez le dossier `images` de votre dépôt, puis **Add file > Upload files**.
+3. Faites glisser le **dossier `galerie`** entier, puis **Commit changes**.
+
+Dans les deux cas, attendez le déploiement de Render (1 à 3 minutes) puis rechargez le site.
+
+**Conseils**
+- **Ordre** : les photos s'affichent par ordre alphabétique des noms de fichiers (avec les nombres dans l'ordre : `photo-2` avant `photo-10`). Nommez-les `01-…`, `02-…` pour choisir l'ordre.
+- **Poids** : de préférence moins de 1 Mo par photo (réduisez-les avant).
+- **Légende et crédit** : une photo ajoutée en lot n'a ni légende ni crédit. Pour en ajouter, ouvrez **Galerie photo > Photos de la galerie** et ajoutez une ligne avec la même photo : sa légende s'affichera et elle ne sera pas dupliquée.
+- Seuls les fichiers `.jpg`, `.jpeg`, `.png`, `.webp`, `.gif` et `.avif` sont pris en compte.
+
+---
+
+## Partie L. L'aperçu quand on partage le lien (WhatsApp, Facebook, Google)
+
+Le site contient maintenant les informations qui permettent d'afficher une **image, un titre et une description** quand on colle l'adresse dans WhatsApp, Facebook ou X. Elles se règlent dans **Pages et textes du site > Partage : aperçu WhatsApp, Facebook, Google** :
+- **Adresse du site** : `https://www.kalombo02.com`
+- **Titre** et **description** de l'aperçu
+- **Image de l'aperçu** : 1200 × 630 pixels, moins de 300 Ko. Une image est déjà fournie (`images/apercu.jpg`) ; vous pouvez la remplacer.
+
+**Important :**
+- **WhatsApp garde en mémoire** l'aperçu d'une adresse déjà envoyée. Après la mise à jour, testez avec une adresse légèrement différente : `https://www.kalombo02.com/?v=2`.
+- Pour Facebook, l'outil « Débogueur de partage » de Facebook permet de forcer la mise à jour.
+- **Pour partager un texte précis**, ouvrez-le sur le site et cliquez sur **« Partager ce texte »** : le lien est copié (ou le menu de partage de votre téléphone s'ouvre). Il a la forme `https://www.kalombo02.com/t/nom-du-texte/`. Dans WhatsApp, il affiche le **titre**, le **début du texte** et la **photo du texte** (ou l'image par défaut si le texte n'a pas de photo). La personne qui clique arrive directement sur le texte.
+- **N'utilisez pas l'adresse de la barre du navigateur** (`…/#a-…`) pour partager un texte : elle n'a pas d'aperçu propre.
+- Pour que la photo s'affiche bien dans l'aperçu, gardez-la **légère (moins de 300 Ko)**, de préférence en format paysage. Après avoir publié un nouveau texte, attendez le déploiement de Render (1 à 3 minutes) avant de partager son lien.
+
+Le plan du site (`sitemap.xml`) et le fichier `robots.txt` sont aussi créés automatiquement à chaque publication : ils aident Google à trouver votre site.
+
+---
+
+## Partie M. Les réseaux sociaux dans la barre du haut
+
+En haut de chaque page, une barre discrète affiche vos réseaux sous forme d'**icônes** (Instagram, Facebook, WhatsApp, YouTube, LinkedIn, X, TikTok, Telegram, ou un globe pour un autre site), à côté du bouton de mode clair/sombre. L'icône est choisie automatiquement d'après l'adresse du lien. Dans **Affichage dans la barre du haut**, vous pouvez choisir « Noms écrits » à la place des icônes. Pour les modifier : **Pages et textes du site > Réseaux sociaux (barre du haut)**.
+- Ajoutez, supprimez ou réordonnez les lignes (Instagram, Facebook, WhatsApp, YouTube, LinkedIn…).
+- Pour chaque ligne : le **nom affiché** et l'**adresse** (elle doit commencer par `https://`). Pour WhatsApp : `https://wa.me/` suivi du numéro avec l'indicatif et sans espace, par exemple `https://wa.me/243846080341`.
+- Pour la **cacher**, supprimez toutes les lignes et masquez aussi le bouton de mode (Apparence).
+
