@@ -14,18 +14,18 @@
           "url": "https://www.kiosquelitteraire.org/bookstore/read-book-details/le-fleuve-est-pareil-a-ma-peine/31"
         },
         {
-          "libelle": "Éditeur",
+          "libelle": "Éditeur : Feuilles folles",
           "url": "https://www.feuillesfolles.fr/"
         }
       ],
-      "citation": "« Nous tenons ici un grand poète, non pas par son imagination, encore moins par ses mots qui sont si connus et souvent si attendus, mais bien par sa capacité à parler à l’essence créative. » Ramcy Kabuya, critique littéraire (quatrième de couverture)."
+      "citation": "« Nous tenons ici un grand poète, non pas par son imagination, encore moins par ses mots qui sont si connus et souvent si attendus, mais bien par sa capacité à parler à l’essence créative. » Ramcy Kabuya, critique littéraire."
     },
     {
       "titre": "La Danse de Ndombolo",
       "genre": "Chroniques",
       "editeur": "Éditions Mikanda",
       "annee": 2024,
-      "preface": "",
+      "preface": "Préface de Youssef Branh",
       "isbn": "979-8335040563",
       "couverture": "/images/couverture-danse.jpg",
       "liens": [
@@ -38,11 +38,11 @@
           "url": "https://www.amazon.fr/danse-Ndombolo-Kalombo-II/dp/B0DC6WKKC6"
         },
         {
-          "libelle": "Éditeur",
+          "libelle": "Éditeur : Mikanda",
           "url": "https://www.editionsmikanda.com/"
         }
       ],
-      "citation": ""
+      "citation": "Un écrivain \"imposteur\" dans une ville sans sexe, dans un pays en perte de vitesse, la Rumbaland. Des livres mort-nés naissent de ses entrailles dégringolées d'homme enceint depuis belle lurette, zut ! depuis belles lunettes. L'homme mène une danse. Cette danse, a-t-elle un nom ? Portera-t-elle le nom de l'homme ? Puisque la danse et lui s'appellent comme des homonymes insatisfaits de la grande tête de l'un et de l'autre : Ndombolo ! Bonne lecture ! Bonne exécution de la danse de Ndombolo, si \"imposteresse\" fût-elle !"
     },
     {
       "titre": "Divine poésie",
@@ -58,11 +58,11 @@
           "url": "https://www.kiosquelitteraire.org/bookstore/read-book-details/un-livre-sur-kiosque-litteraire/1"
         },
         {
-          "libelle": "Éditeur",
+          "libelle": "Éditeur : Calures",
           "url": "https://www.calures.org/"
         }
       ],
-      "citation": ""
+      "citation": "Décrit comme un cri du cœur poétique, l'ouvrage redéfinit l'enfer non pas comme un concept abstrait, mais comme une réalité humaine vécue, tout en plaidant pour l'empathie et la compassion envers les personnes qui souffrent."
     }
   ]
 }
