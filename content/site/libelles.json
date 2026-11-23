@@ -9,7 +9,7 @@
     "nav_galerie": "Galerie",
     "nav_apropos": "À propos",
     "nav_contact": "Contact",
-    "pied_contact": "Contact et mentions légales"
+    "pied_contact": "Contact"
   },
   "accueil": {
     "h_citation": "Citation du jour",
@@ -42,13 +42,16 @@
     "date_inconnue": "[date à renseigner]",
     "h_projets": "Projets et activités",
     "renvoi_projets": "Ses rôles et activités sont détaillés dans la rubrique",
-    "galerie_note": "Photographies : [légendes et crédits à renseigner pour chaque nouvelle image].",
+    "galerie_note": "Photographies : l'homme et l'œuvre",
     "fermer": "Fermer",
     "photo_credit": "photographie",
     "h_mentions": "Mentions légales",
     "whatsapp_prefixe": "WhatsApp :",
     "mode_sombre": "Mode sombre",
     "mode_clair": "Mode clair",
+    "partager": "Partager ce texte",
+    "lien_copie": "Lien copié. Collez-le dans WhatsApp ou ailleurs.",
+    "lien_partage": "Lien à partager :",
     "c_titre": "Commentaires",
     "c_nom": "Votre nom",
     "c_message": "Votre commentaire",
@@ -57,9 +60,6 @@
     "c_erreur": "L’envoi a échoué. Réessayez plus tard.",
     "c_erreur_champs": "Merci de remplir votre nom et votre commentaire.",
     "c_aucun": "Aucun commentaire publié pour l’instant.",
-    "c_avertissement": "Les commentaires sont relus avant d’être publiés.",
-    "partager": "Partager ce texte",
-    "lien_copie": "Lien copié. Collez-le dans WhatsApp ou ailleurs.",
-    "lien_partage": "Lien à partager :"
+    "c_avertissement": "Les commentaires sont relus avant d’être publiés."
   }
 }
